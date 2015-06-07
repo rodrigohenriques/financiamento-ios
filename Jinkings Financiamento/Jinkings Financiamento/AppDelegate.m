@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import <Parse/Parse.h>
+
 @interface AppDelegate ()
 
 @end
@@ -16,7 +18,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [Parse enableLocalDatastore];
+    
+    [Parse setApplicationId:@"tcPa2fsP1bULHFjD6ZG0qHxmAILBYku4TosH8uX2"
+                  clientKey:@"jXAtMw4hIthlWgjlL9LasZQ03UJv4igOw2bHPH3R"];
+    
+    [self customNavigationBar];
     return YES;
 }
 
@@ -107,6 +114,17 @@
     _managedObjectContext = [[NSManagedObjectContext alloc] init];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     return _managedObjectContext;
+}
+
+-(void) customNavigationBar{
+    
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor colorWithRed:45.0/255.0 green:67.0/255.0 blue:172.0/255.0 alpha:1.0], NSForegroundColorAttributeName, nil]];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:45.0/255.0 green:67.0/255.0 blue:172.0/255.0 alpha:1.0]];
 }
 
 #pragma mark - Core Data Saving support

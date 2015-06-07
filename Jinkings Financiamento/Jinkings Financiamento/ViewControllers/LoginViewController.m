@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 
+#define placeHolderColor [UIColor whiteColor]
+
 @interface LoginViewController ()
 
 @end
@@ -16,29 +18,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [[UIFloatLabelTextField appearance] setBackgroundColor:[UIColor whiteColor]];
+    
+    _edtEmail.delegate = self;
+    _edtEmail.dismissKeyboardWhenClearingTextField = @YES;
+    _edtEmail.backgroundColor = [UIColor clearColor];
+    
+    _edtSenha.secureTextEntry = YES;
+    _edtSenha.delegate = self;
+    _edtSenha.dismissKeyboardWhenClearingTextField = @YES;
+    _edtSenha.backgroundColor = [UIColor clearColor];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (IBAction)btnLoginClick:(id)sender {
     [self performSegueWithIdentifier:@"sgPrincipal" sender:nil];
 }
 
 - (IBAction)btnCadastroClick:(id)sender {
     [self performSegueWithIdentifier:@"sgCadastro" sender:nil];
+}
+
+#pragma mark - UIResponder
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    if(![touch.view isMemberOfClass:[UITextField class]]) {
+        [touch.view endEditing:YES];
+    }
 }
 
 @end

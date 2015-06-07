@@ -1,0 +1,10 @@
+PODS:
+  - UIFloatLabelTextField (1.2.1)
+
+DEPENDENCIES:
+  - UIFloatLabelTextField
+
+SPEC CHECKSUMS:
+  UIFloatLabelTextField: addef0228278e178751a0de2d5200fe662a0757b
+
+COCOAPODS: 0.36.3

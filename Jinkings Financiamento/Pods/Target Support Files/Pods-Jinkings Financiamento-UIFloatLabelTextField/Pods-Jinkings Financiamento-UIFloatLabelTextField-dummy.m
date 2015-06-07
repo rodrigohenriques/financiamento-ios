@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_Jinkings_Financiamento_UIFloatLabelTextField : NSObject
+@end
+@implementation PodsDummy_Pods_Jinkings_Financiamento_UIFloatLabelTextField
+@end
