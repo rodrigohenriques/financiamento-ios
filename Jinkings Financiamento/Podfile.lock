@@ -1,10 +1,42 @@
 PODS:
-  - UIFloatLabelTextField (1.2.1)
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - CRToast (0.0.7)
+  - IQKeyboardManager (3.2.4)
+  - MBProgressHUD (0.9.1)
+  - RPFloatingPlaceholders (0.2.6)
 
 DEPENDENCIES:
-  - UIFloatLabelTextField
+  - AFNetworking
+  - CRToast
+  - IQKeyboardManager
+  - MBProgressHUD
+  - RPFloatingPlaceholders
 
 SPEC CHECKSUMS:
-  UIFloatLabelTextField: addef0228278e178751a0de2d5200fe662a0757b
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  CRToast: 99a28f4387def43b439ad88f957ce31357ff7373
+  IQKeyboardManager: 555b1231fefafb21b19278d7cca72986a27b748b
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  RPFloatingPlaceholders: 9a4d31f43097a3f2577b0209303a3a39d65a91c3
 
 COCOAPODS: 0.36.3

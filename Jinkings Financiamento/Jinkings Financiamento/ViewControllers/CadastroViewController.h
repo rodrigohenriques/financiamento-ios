@@ -7,15 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <UIFloatLabelTextField/UIFloatLabelTextField.h>
+#import <RPFloatingPlaceholders/RPFloatingPlaceholderTextField.h>
+#import "BaseViewController.h"
 
-@interface CadastroViewController : UIViewController <UITextFieldDelegate>
+@interface CadastroViewController : BaseViewController <UITextFieldDelegate, UIAlertViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UIFloatLabelTextField *edtNome;
-@property (strong, nonatomic) IBOutlet UIFloatLabelTextField *edtEmail;
-@property (strong, nonatomic) IBOutlet UIFloatLabelTextField *edtTelefone;
-@property (strong, nonatomic) IBOutlet UIFloatLabelTextField *edtCelular;
-@property (strong, nonatomic) IBOutlet UIFloatLabelTextField *edtSenha;
-@property (strong, nonatomic) IBOutlet UIFloatLabelTextField *edtConfirmarSenha;
+@property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtNome;
+@property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtEmail;
+@property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtTelefone;
+@property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtCelular;
+@property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtSenha;
+@property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtConfirmarSenha;
+
+@property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtCPF;
 
 @end

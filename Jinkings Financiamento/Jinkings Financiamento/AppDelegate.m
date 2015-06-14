@@ -118,13 +118,14 @@
 
 -(void) customNavigationBar{
     
-    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.106 green:0.243 blue:0.576 alpha:1]];
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.106 green:0.243 blue:0.576 alpha:1]];
+    
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           [UIColor colorWithRed:45.0/255.0 green:67.0/255.0 blue:172.0/255.0 alpha:1.0], NSForegroundColorAttributeName, nil]];
+                                                           [UIColor colorWithRed:1 green:0.824 blue:0 alpha:1], NSForegroundColorAttributeName, nil]];
     
-    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:45.0/255.0 green:67.0/255.0 blue:172.0/255.0 alpha:1.0]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 }
 
 #pragma mark - Core Data Saving support

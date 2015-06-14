@@ -3,7 +3,11 @@
 
 target 'Jinkings Financiamento' do
 
-pod 'UIFloatLabelTextField'
+pod 'RPFloatingPlaceholders'
+pod 'CRToast'
+pod 'MBProgressHUD'
+pod 'IQKeyboardManager'
+pod 'AFNetworking'
 
 end
 

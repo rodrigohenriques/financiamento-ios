@@ -23,6 +23,8 @@
 		79409F941B23E72C004A97AF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79409F911B23E67E004A97AF /* Social.framework */; };
 		79409F961B23E78A004A97AF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79409F951B23E78A004A97AF /* Parse.framework */; };
 		79409F981B23E800004A97AF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79409F971B23E800004A97AF /* Bolts.framework */; };
+		798967A41B2CFA15003DC09A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798967A31B2CFA15003DC09A /* BaseViewController.m */; };
+		798967A71B2D1964003DC09A /* PerfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798967A61B2D1964003DC09A /* PerfilViewController.m */; };
 		79D097A61AF6C4F300DF870C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D097A51AF6C4F300DF870C /* main.m */; };
 		79D097A91AF6C4F300DF870C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D097A81AF6C4F300DF870C /* AppDelegate.m */; };
 		79D097AC1AF6C4F300DF870C /* Jinkings_Financiamento.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79D097AA1AF6C4F300DF870C /* Jinkings_Financiamento.xcdatamodeld */; };
@@ -69,6 +71,10 @@
 		79409F911B23E67E004A97AF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		79409F951B23E78A004A97AF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.7.4/Parse.framework"; sourceTree = "<group>"; };
 		79409F971B23E800004A97AF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.7.4/Bolts.framework"; sourceTree = "<group>"; };
+		798967A21B2CFA15003DC09A /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		798967A31B2CFA15003DC09A /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		798967A51B2D1964003DC09A /* PerfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerfilViewController.h; sourceTree = "<group>"; };
+		798967A61B2D1964003DC09A /* PerfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfilViewController.m; sourceTree = "<group>"; };
 		79D097A01AF6C4F300DF870C /* Jinkings Financiamento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jinkings Financiamento.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79D097A41AF6C4F300DF870C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79D097A51AF6C4F300DF870C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -145,6 +151,8 @@
 		7535B697D8A2FD7FB96D6A84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79409F971B23E800004A97AF /* Bolts.framework */,
+				79409F951B23E78A004A97AF /* Parse.framework */,
 				79409F911B23E67E004A97AF /* Social.framework */,
 				79409F8F1B23E679004A97AF /* Accounts.framework */,
 				79409F8D1B23E66C004A97AF /* libsqlite3.dylib */,
@@ -163,11 +171,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		798967A81B2D3CA9003DC09A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		79D097971AF6C4F300DF870C = {
 			isa = PBXGroup;
 			children = (
-				79409F971B23E800004A97AF /* Bolts.framework */,
-				79409F951B23E78A004A97AF /* Parse.framework */,
 				79D097A21AF6C4F300DF870C /* Jinkings Financiamento */,
 				79D097BF1AF6C4F300DF870C /* Jinkings FinanciamentoTests */,
 				79D097A11AF6C4F300DF870C /* Products */,
@@ -188,6 +201,7 @@
 		79D097A21AF6C4F300DF870C /* Jinkings Financiamento */ = {
 			isa = PBXGroup;
 			children = (
+				798967A81B2D3CA9003DC09A /* Service */,
 				79D097CC1AF6C5DB00DF870C /* Components */,
 				79D097CD1AF6C5DB00DF870C /* Domain */,
 				79D097CE1AF6C5DB00DF870C /* Util */,
@@ -269,6 +283,10 @@
 				79D097E31AF6D75A00DF870C /* FormularioViewController.m */,
 				79D097E51AF6D77400DF870C /* EnviadosViewController.h */,
 				79D097E61AF6D77400DF870C /* EnviadosViewController.m */,
+				798967A21B2CFA15003DC09A /* BaseViewController.h */,
+				798967A31B2CFA15003DC09A /* BaseViewController.m */,
+				798967A51B2D1964003DC09A /* PerfilViewController.h */,
+				798967A61B2D1964003DC09A /* PerfilViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -408,7 +426,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				798967A71B2D1964003DC09A /* PerfilViewController.m in Sources */,
 				79D097DE1AF6C86800DF870C /* LoginViewController.m in Sources */,
+				798967A41B2CFA15003DC09A /* BaseViewController.m in Sources */,
 				79D097E71AF6D77400DF870C /* EnviadosViewController.m in Sources */,
 				79D097DB1AF6C7A400DF870C /* Model+JSONKit.m in Sources */,
 				79D097A91AF6C4F300DF870C /* AppDelegate.m in Sources */,

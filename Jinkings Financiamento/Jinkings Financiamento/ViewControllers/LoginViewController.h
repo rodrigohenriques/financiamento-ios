@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <UIFloatLabelTextField/UIFloatLabelTextField.h>
+#import <RPFloatingPlaceholders/RPFloatingPlaceholderTextField.h>
+#import "BaseViewController.h"
 
-@interface LoginViewController : UIViewController<UITextFieldDelegate>
+@interface LoginViewController : BaseViewController<UITextFieldDelegate>
 
-@property (strong, nonatomic) IBOutlet UIFloatLabelTextField *edtEmail;
-@property (strong, nonatomic) IBOutlet UIFloatLabelTextField *edtSenha;
+@property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtEmail;
+@property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtSenha;
 
 @end
