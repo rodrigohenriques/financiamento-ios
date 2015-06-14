@@ -281,8 +281,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tipo do imóvel" minimumFontSize="17" id="ZQQ-tU-2vG" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="16" y="274" width="288" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tipo do imóvel" clearsOnBeginEditing="YES" minimumFontSize="17" id="ZQQ-tU-2vG" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="274" width="245" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -293,7 +293,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DADOS DO FINANCIAMENTO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d7c-OX-kfr">
                                 <rect key="frame" x="16" y="367" width="205" height="21"/>
@@ -302,18 +302,74 @@
                                 <color key="textColor" red="0.1058823529" green="0.24313725489999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Valor do financiamento" minimumFontSize="17" id="yzy-2M-JHo" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="16" y="396" width="288" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Possui financiamento imobiliário?" minimumFontSize="17" id="yzy-2M-JHo" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="396" width="245" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Prazo desejado" minimumFontSize="17" id="Gen-5i-DCk" customClass="RPFloatingPlaceholderTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Valor a ser financiado" minimumFontSize="17" id="Gen-5i-DCk" customClass="RPFloatingPlaceholderTextField">
                                 <rect key="frame" x="16" y="441" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Prazo desejado (até 360 meses)" minimumFontSize="17" id="kbD-fp-geb" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="485" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Possui imóvel no município do financiamento?" minimumFontSize="17" id="6FQ-Ld-lLK" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="529" width="245" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Possui imóvel no município onde reside?" minimumFontSize="17" id="tsj-EE-wt5" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="573" width="245" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Data de nascimento do comprador" minimumFontSize="17" id="dgm-Hr-pTr" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="615" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DADOS BANCÁRIOS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cEw-rs-dSj">
+                                <rect key="frame" x="16" y="663" width="205" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.1058823529" green="0.24313725489999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="É correntista no Banco do Brasil?" minimumFontSize="17" id="yGy-b6-UzD" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="695" width="245" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Agência" minimumFontSize="17" id="r2R-BP-ZSU" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="737" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Conta" minimumFontSize="17" id="OR9-x9-J6G" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="779" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" id="9Bd-MA-VZI">
@@ -342,7 +398,7 @@
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="eIl-69-Ffu">
-                                <rect key="frame" x="16" y="303" width="288" height="1"/>
+                                <rect key="frame" x="16" y="303" width="245" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -352,12 +408,47 @@
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="UlL-gw-rdy">
-                                <rect key="frame" x="16" y="425" width="288" height="1"/>
+                                <rect key="frame" x="16" y="425" width="245" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="zg3-Iy-5Tf">
                                 <rect key="frame" x="16" y="470" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="DgI-HW-kOZ">
+                                <rect key="frame" x="16" y="514" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="qMw-9u-3EY">
+                                <rect key="frame" x="16" y="558" width="245" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="Gmh-y4-SoO">
+                                <rect key="frame" x="16" y="602" width="245" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="xN1-ka-tpK">
+                                <rect key="frame" x="16" y="644" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="8YU-Am-Huf">
+                                <rect key="frame" x="16" y="724" width="245" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="OlO-MR-Wph">
+                                <rect key="frame" x="16" y="766" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="bED-rs-G7k">
+                                <rect key="frame" x="16" y="808" width="288" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -371,18 +462,78 @@
                                     <action selector="btnPesquisarCepClick:" destination="1V8-NT-Q9v" eventType="touchUpInside" id="miU-8g-wYY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="27C-XC-U9G">
+                                <rect key="frame" x="269" y="271" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="drop-down">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionSheetTipoImovel:" destination="1V8-NT-Q9v" eventType="touchUpInside" id="MQM-KQ-SpA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZiI-W3-Y9W">
+                                <rect key="frame" x="269" y="526" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="drop-down">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionSheetMunicipioFinanciamento:" destination="1V8-NT-Q9v" eventType="touchUpInside" id="VGF-iz-hYv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zPt-Ws-5C9">
+                                <rect key="frame" x="269" y="570" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="drop-down">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionSheetMunicipioReside:" destination="1V8-NT-Q9v" eventType="touchUpInside" id="5aq-Iw-1iT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="J68-pq-eg9">
+                                <rect key="frame" x="269" y="393" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="drop-down">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionSheetPossuiFinanciamento:" destination="1V8-NT-Q9v" eventType="touchUpInside" id="U84-2y-Xa7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="afz-Z2-l5m">
+                                <rect key="frame" x="269" y="692" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="drop-down">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionSheetECorrentista:" destination="1V8-NT-Q9v" eventType="touchUpInside" id="FVe-3j-dQm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="bookmarks" id="Eko-1d-kpW"/>
                     <connections>
+                        <outlet property="edtAgencia" destination="r2R-BP-ZSU" id="MT2-Md-3SO"/>
                         <outlet property="edtBairro" destination="4bO-fA-MCX" id="iMI-LG-vdg"/>
                         <outlet property="edtCep" destination="e3Z-Ba-gOJ" id="67W-v4-d8U"/>
+                        <outlet property="edtConta" destination="OR9-x9-J6G" id="VQq-VJ-KcI"/>
+                        <outlet property="edtDataNascimentoComprador" destination="dgm-Hr-pTr" id="dKA-Kb-YDN"/>
+                        <outlet property="edtECorrentista" destination="yGy-b6-UzD" id="5lX-m9-6zj"/>
+                        <outlet property="edtImovelMunicipioFinanciamento" destination="6FQ-Ld-lLK" id="Jfg-QK-qHg"/>
+                        <outlet property="edtImovelMunicipioReside" destination="tsj-EE-wt5" id="rvC-D5-Ri4"/>
                         <outlet property="edtLogradouro" destination="2Qy-3r-j5J" id="1b1-P2-xOr"/>
                         <outlet property="edtMunicipio" destination="h5x-Q5-Hut" id="2cY-Cq-Q7U"/>
+                        <outlet property="edtPossuiFinanciamento" destination="yzy-2M-JHo" id="AO4-y7-Tvh"/>
+                        <outlet property="edtPrazoDesejado" destination="kbD-fp-geb" id="5na-do-Oxg"/>
                         <outlet property="edtTipoImovel" destination="ZQQ-tU-2vG" id="1nD-sf-EZy"/>
                         <outlet property="edtUF" destination="3zg-23-0Ed" id="mJJ-ez-IWi"/>
+                        <outlet property="edtValorFinanciamento" destination="Gen-5i-DCk" id="ZMj-dU-XP2"/>
                         <outlet property="edtValorImovel" destination="S2E-dG-Osg" id="dT4-Bb-YpC"/>
+                        <outlet property="scrollView" destination="pGE-ZS-jlA" id="c0j-I2-35c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41Y-Sh-0Q1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -441,6 +592,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="drop-down" width="120" height="120"/>
         <image name="find" width="190" height="194"/>
         <image name="logo-soluciona_splash" width="166" height="101"/>
     </resources>

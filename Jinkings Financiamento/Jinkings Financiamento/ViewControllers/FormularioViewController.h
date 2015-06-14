@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FormularioViewController : UIViewController<UITextFieldDelegate>
+@interface FormularioViewController : UIViewController<UITextFieldDelegate, UIActionSheetDelegate>
 
 @end

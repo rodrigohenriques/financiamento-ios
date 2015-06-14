@@ -1,9 +1,4 @@
 //
-//  JSONObjects.h
-//  JSONkitArc
-//
-//  Created by Marcio Manske on 10/05/12.
-//  Copyright (c) 2012 CMNet Solucoes em Infotmatica. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
