@@ -71,13 +71,15 @@
 - (IBAction)btnPesquisarCepClick:(id)sender {
     if (_edtCep.text.length > 0) {
         
+        [_edtCep resignFirstResponder];
+        
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDModeAnnularDeterminate;
         hud.labelText = @"Consultando";
         
-        [self limparCamposEndereco];
+        NSString *strUrlCep = [NSString stringWithFormat:@"http://cep.correiocontrol.com.br/%@.json", [[_edtCep.text stringByReplacingOccurrencesOfString:@"." withString:@""] stringByReplacingOccurrencesOfString:@"-" withString:@""]];
         
-        NSString *strUrlCep = [NSString stringWithFormat:@"http://cep.correiocontrol.com.br/%@.json", _edtCep.text];
+        [self limparCamposEndereco];
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         
@@ -99,7 +101,6 @@
 
 -(void) limparCamposEndereco{
     _edtBairro.text     = @"";
-    _edtCep.text        = @"";
     _edtMunicipio.text  = @"";
     _edtLogradouro.text = @"";
     _edtUF.text         = @"";
@@ -107,7 +108,6 @@
 
 -(void) preencherEndereco:(NSDictionary*) dicEndereco{
     _edtBairro.text = [dicEndereco objectForKey:@"bairro"];
-    _edtCep.text    = [dicEndereco objectForKey:@"cep"];
     _edtMunicipio.text    = [dicEndereco objectForKey:@"localidade"];
     _edtLogradouro.text    = [dicEndereco objectForKey:@"logradouro"];
     _edtUF.text    = [dicEndereco objectForKey:@"uf"];
@@ -276,6 +276,40 @@
             _edtPossuiFinanciamento.text = [actionSheet buttonTitleAtIndex:buttonIndex];
         }
     }
+}
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+
+    if ([string isEqualToString:@""]) {
+        return YES;
+    }
+    
+    if ([textField isEqual:_edtCep]) {
+        
+        if (textField.text.length >= 10) {
+            return NO;
+        }
+        
+        if (textField.text.length == 2) {
+            textField.text = [NSString stringWithFormat:@"%@.",textField.text];
+        }
+        
+        if (textField.text.length == 6) {
+            textField.text = [NSString stringWithFormat:@"%@-",textField.text];
+        }
+    }
+    
+    if ([textField isEqual:_edtDataNascimentoComprador]) {
+        if (textField.text.length >= 10) {
+            return NO;
+        }
+        
+        if (textField.text.length == 2 || textField.text.length == 5) {
+            textField.text = [NSString stringWithFormat:@"%@/",textField.text];
+        }
+    }
+    
+    return YES;
 }
 
 
