@@ -312,5 +312,45 @@
     return YES;
 }
 
+-(BOOL) validarCampos{
+    return YES;
+}
+
+- (IBAction)btnEnviarClick:(id)sender {
+    
+    if (![self validarCampos]) {
+        return;
+    }
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.labelText = @"Enviando";
+    
+    PFObject *simulacao = [PFObject objectWithClassName:@"Simulacao"];
+    
+    simulacao[@"imovelMunicipioFinanciamento"] = _edtImovelMunicipioFinanciamento.text;
+    simulacao[@"imovelMunicipioReside"] = _edtImovelMunicipioReside.text;
+    simulacao[@"tipoImovel"] = _edtTipoImovel.text;
+    simulacao[@"possuiFinanciamento"] = _edtPossuiFinanciamento.text;
+    simulacao[@"prazoDesejado"] = _edtPrazoDesejado.text;
+    simulacao[@"valorFinanciamento"] = _edtValorFinanciamento.text;
+    simulacao[@"valorImovel"] = _edtValorImovel.text;
+    simulacao[@"uf"] = _edtUF.text;
+    simulacao[@"bairro"] = _edtBairro.text;
+    simulacao[@"municipio"] = _edtMunicipio.text;
+    simulacao[@"logradouro"] = _edtLogradouro.text;
+    simulacao[@"cep"] = _edtCep.text;
+    
+    [simulacao saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+        
+        } else {
+            // There was a problem, check error.description
+        }
+        
+        [hud hide:YES];
+    }];
+}
+
 
 @end
