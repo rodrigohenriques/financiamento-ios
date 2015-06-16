@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="zVe-X9-WaX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="zVe-X9-WaX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Login-->
@@ -205,6 +205,15 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="edtCPF" destination="Z0z-00-3cg" id="uqU-8r-V4b"/>
+                        <outlet property="edtCelular" destination="WK4-Zb-ys9" id="hYB-Tn-Rp3"/>
+                        <outlet property="edtConfirmarSenha" destination="6aW-E9-JF8" id="K3D-eT-xr5"/>
+                        <outlet property="edtEmail" destination="TCm-v0-hWD" id="12R-zg-cgu"/>
+                        <outlet property="edtNome" destination="Ryp-Dg-HFW" id="lf5-bV-o6U"/>
+                        <outlet property="edtSenha" destination="o6v-US-cgj" id="X6P-BY-jb9"/>
+                        <outlet property="edtTelefone" destination="Q3m-3c-mqn" id="d8U-Ed-Fl9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwe-8I-xsO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
