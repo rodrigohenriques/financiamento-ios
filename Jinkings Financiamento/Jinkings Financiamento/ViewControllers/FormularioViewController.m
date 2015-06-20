@@ -385,26 +385,32 @@
     hud.mode = MBProgressHUDModeAnnularDeterminate;
     hud.labelText = @"Enviando";
     
+    PFObject *user = [PFUser currentUser];
+    
     PFObject *simulacao = [PFObject objectWithClassName:@"Simulacao"];
     
-    simulacao[@"imovelMunicipioFinanciamento"] = _edtImovelMunicipioFinanciamento.text;
-    simulacao[@"imovelMunicipioReside"] = _edtImovelMunicipioReside.text;
+    simulacao[@"imovelMunicipioFinanciamento"] = [_edtImovelMunicipioFinanciamento.text isEqualToString:@"Sim"] ? [NSNumber numberWithBool:YES] : [NSNumber numberWithBool:NO];
+    
+    simulacao[@"imovelMunicipioReside"] = [_edtImovelMunicipioReside.text isEqualToString:@"Sim"] ? [NSNumber numberWithBool:YES] : [NSNumber numberWithBool:NO];
+    
     simulacao[@"tipoImovel"] = _edtTipoImovel.text;
-    simulacao[@"possuiFinanciamento"] = _edtPossuiFinanciamento.text;
-    simulacao[@"prazoDesejado"] = _edtPrazoDesejado.text;
-    simulacao[@"valorFinanciamento"] = _edtValorFinanciamento.text;
-    simulacao[@"valorImovel"] = _edtValorImovel.text;
+    simulacao[@"possuiFinanciamento"] = [_edtPossuiFinanciamento.text isEqualToString:@"Sim"] ? [NSNumber numberWithBool:YES] : [NSNumber numberWithBool:NO]
+    ;
+    simulacao[@"prazoDesejado"] = [NSNumber numberWithInt:[_edtPrazoDesejado.text intValue]];
+    simulacao[@"valorFinanciamento"] = [NSNumber numberWithFloat:[_edtValorFinanciamento.text floatValue]];
+    simulacao[@"valorImovel"] = [NSNumber numberWithFloat:[_edtValorImovel.text floatValue]];
     simulacao[@"uf"] = _edtUF.text;
     simulacao[@"bairro"] = _edtBairro.text;
     simulacao[@"municipio"] = _edtMunicipio.text;
     simulacao[@"logradouro"] = _edtLogradouro.text;
     simulacao[@"cep"] = _edtCep.text;
+    simulacao[@"user"] = user;
     
     [simulacao saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-        
+            NSLog(@"Foi");
         } else {
-            // There was a problem, check error.description
+            NSLog(@"Não foi");
         }
         
         [hud hide:YES];
