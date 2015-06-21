@@ -11,6 +11,7 @@
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
 #import <RPFloatingPlaceholders/RPFloatingPlaceholderTextField.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+#import <TSMessages/TSMessage.h>
 
 @interface FormularioViewController ()
 
@@ -47,7 +48,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [_scrollView setContentSize:CGSizeMake(_scrollView.bounds.size.width, 1024)];
+    [_scrollView setContentSize:CGSizeMake(_scrollView.bounds.size.width, 1250)];
     
     [self setupTextFields];
     
@@ -60,6 +61,8 @@
     _actionSheetPossuiFinanciamento = [[UIActionSheet alloc] initWithTitle:@"Possui financiamento imobiliário?" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Sim", @"Não", nil];
     
     _actionSheetTipoImovel = [[UIActionSheet alloc] initWithTitle:@"Tipo do imóvel" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Comercial Novo", @"Comercial Usado", @"Residencial Novo", @"Residencial Usado", nil];
+    
+    self.navigationItem.title = @"Simulação";
     
     // Do any additional setup after loading the view.
 }
@@ -372,7 +375,89 @@
 }
 
 -(BOOL) validarCampos{
+    
+    if (_edtCep.text.length <= 0) {
+        [self exibeMensagem:@"Preencha o campo CEP"];
+        return NO;
+    }
+    
+    if (_edtBairro.text.length <= 0) {
+        [self exibeMensagem:@"Preencha o campo BAIRRO"];
+        return NO;
+    }
+    
+    if (_edtLogradouro.text.length <= 0) {
+        [self exibeMensagem:@"Preencha o campo LOGRADOURO"];
+        return NO;
+    }
+    
+    if (_edtUF.text.length <= 0) {
+        [self exibeMensagem:@"Preencha o campo UF"];
+        return NO;
+    }
+    
+    if (_edtMunicipio.text.length <= 0) {
+        [self exibeMensagem:@"Preencha o campo MUNICÍPIO"];
+        return NO;
+    }
+    
+    if (_edtTipoImovel.text.length <= 0) {
+        [self exibeMensagem:@"Selecione o Tipo do Imóvel"];
+        return NO;
+    }
+    
+    if (_edtValorImovel.text.length <= 0) {
+        [self exibeMensagem:@"Informe o valor do imóvel"];
+        return NO;
+    }
+    
+    if (_edtPossuiFinanciamento.text.length <= 0) {
+        [self exibeMensagem:@"Informe se você possui financiamento"];
+        return NO;
+    }
+    
+    if (_edtValorFinanciamento.text.length <= 0) {
+        [self exibeMensagem:@"Informe o valor do financiamento desejado"];
+        return NO;
+    }
+    
+    if (_edtPrazoDesejado.text.length <= 0) {
+        [self exibeMensagem:@"Informe o prazo desejado para o financiamento"];
+        return NO;
+    }
+    
+    if (_edtImovelMunicipioFinanciamento.text.length <= 0) {
+        [self exibeMensagem:@"Informe se você possui imóvel no município do financiamento"];
+        return NO;
+    }
+    
+    if (_edtImovelMunicipioReside.text.length <= 0) {
+        [self exibeMensagem:@"Informe se você possui imóvel no município onde reside"];
+        return NO;
+    }
+    
+    if (_edtDataNascimentoComprador.text.length <= 0) {
+        [self exibeMensagem:@"Informe a data de nascimento do comprador mais velho"];
+        return NO;
+    }
+    
+    if (_edtECorrentista.text.length <= 0) {
+        [self exibeMensagem:@"Informe se você é correntista do Banco do Brasil"];
+        return NO;
+    } else if ([_edtECorrentista.text isEqualToString:@"Sim"]){
+        if (_edtAgencia.text.length <= 0 || _edtConta.text.length <= 0) {
+            [self exibeMensagem:@"Informe sua agência e conta"];
+            return NO;
+        }
+    }
+ 
     return YES;
+}
+
+-(void) exibeMensagem:(NSString*) mensagem{
+    [TSMessage showNotificationWithTitle:@"Atenção"
+                                subtitle:mensagem
+                                    type:TSMessageNotificationTypeError];
 }
 
 - (IBAction)btnEnviarClick:(id)sender {
@@ -385,36 +470,75 @@
     hud.mode = MBProgressHUDModeAnnularDeterminate;
     hud.labelText = @"Enviando";
     
+    [hud show:YES];
+    
     PFObject *user = [PFUser currentUser];
     
     PFObject *simulacao = [PFObject objectWithClassName:@"Simulacao"];
     
+    simulacao[@"cep"] = _edtCep.text;
+    simulacao[@"bairro"] = _edtBairro.text;
+    simulacao[@"logradouro"] = _edtLogradouro.text;
+    simulacao[@"uf"] = _edtUF.text;
+    simulacao[@"municipio"] = _edtMunicipio.text;
+    simulacao[@"tipoImovel"] = _edtTipoImovel.text;
+    simulacao[@"valorImovel"] = _edtValorImovel.text;
+    
+    simulacao[@"possuiFinanciamento"] = [_edtPossuiFinanciamento.text isEqualToString:@"Sim"] ? [NSNumber numberWithBool:YES] : [NSNumber numberWithBool:NO];
+    
+    simulacao[@"valorFinanciamento"] = _edtValorFinanciamento.text;
+    
+    simulacao[@"prazoDesejado"] = [NSNumber numberWithInt:[_edtPrazoDesejado.text intValue]];
+    
     simulacao[@"imovelMunicipioFinanciamento"] = [_edtImovelMunicipioFinanciamento.text isEqualToString:@"Sim"] ? [NSNumber numberWithBool:YES] : [NSNumber numberWithBool:NO];
     
     simulacao[@"imovelMunicipioReside"] = [_edtImovelMunicipioReside.text isEqualToString:@"Sim"] ? [NSNumber numberWithBool:YES] : [NSNumber numberWithBool:NO];
+
+    simulacao[@"dataNascimento"] = _edtDataNascimentoComprador.text;
     
-    simulacao[@"tipoImovel"] = _edtTipoImovel.text;
-    simulacao[@"possuiFinanciamento"] = [_edtPossuiFinanciamento.text isEqualToString:@"Sim"] ? [NSNumber numberWithBool:YES] : [NSNumber numberWithBool:NO]
-    ;
-    simulacao[@"prazoDesejado"] = [NSNumber numberWithInt:[_edtPrazoDesejado.text intValue]];
-    simulacao[@"valorFinanciamento"] = [NSNumber numberWithFloat:[_edtValorFinanciamento.text floatValue]];
-    simulacao[@"valorImovel"] = [NSNumber numberWithFloat:[_edtValorImovel.text floatValue]];
-    simulacao[@"uf"] = _edtUF.text;
-    simulacao[@"bairro"] = _edtBairro.text;
-    simulacao[@"municipio"] = _edtMunicipio.text;
-    simulacao[@"logradouro"] = _edtLogradouro.text;
-    simulacao[@"cep"] = _edtCep.text;
+    simulacao[@"correntista"] = [_edtECorrentista.text isEqualToString:@"Sim"] ? [NSNumber numberWithBool:YES] : [NSNumber numberWithBool:NO];
+    
+    simulacao[@"agencia"] = _edtAgencia.text;
+    simulacao[@"conta"] = _edtConta.text;
+    
     simulacao[@"user"] = user;
+    
+    simulacao[@"status"] = @"Em análise";
+    
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+    
+    simulacao[@"dataEnvio"] = [dateFormatter stringFromDate:[NSDate date]];
     
     [simulacao saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            NSLog(@"Foi");
+            [[[UIAlertView alloc] initWithTitle:@"Sucesso" message:@"Sua simulação de financiamento foi enviada com sucesso. Nossa equipe entrará em contato com você para informar os próximos passos. Obrigado por escolher a Soluciona!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+            [self limparCampos];
         } else {
-            NSLog(@"Não foi");
+            [self exibeMensagem:@"Não foi possível enviar a sua simulação. Por favor, tente novamente mais tarde."];
         }
         
         [hud hide:YES];
     }];
+}
+
+-(void) limparCampos{
+    _edtCep.text = @"";
+    _edtBairro.text = @"";
+    _edtLogradouro.text = @"";
+    _edtUF.text = @"";
+    _edtMunicipio.text = @"";
+    _edtTipoImovel.text = @"";
+    _edtValorImovel.text = @"";
+    _edtPossuiFinanciamento.text = @"";
+    _edtValorFinanciamento.text = @"";
+    _edtPrazoDesejado.text = @"";
+    _edtImovelMunicipioFinanciamento.text = @"";
+    _edtImovelMunicipioReside.text = @"";
+    _edtDataNascimentoComprador.text = @"";
+    _edtECorrentista.text = @"";
+    _edtAgencia.text = @"";
+    _edtConta.text = @"";
 }
 
 

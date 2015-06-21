@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EnviadosViewController : UIViewController
+@interface EnviadosViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @end

@@ -8,10 +8,12 @@
 
 #import "CadastroViewController.h"
 #import <Parse/Parse.h>
-#import <CRToast/CRToast.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+#import <TSMessages/TSMessage.h>
 
 @interface CadastroViewController ()
+
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -20,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [_scrollView setContentSize:CGSizeMake(_scrollView.bounds.size.width, 600)];
     
     _edtNome.delegate = self;
     _edtNome.backgroundColor = [UIColor clearColor];
@@ -45,6 +49,11 @@
     _edtCelular.backgroundColor = [UIColor clearColor];
     _edtCelular.floatingLabelActiveTextColor = [UIColor colorWithRed:0.278 green:0.314 blue:0.349 alpha:1];
     _edtCelular.floatingLabelInactiveTextColor = [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1];
+    
+    _edtCategoriaProfissional.delegate = self;
+    _edtCategoriaProfissional.backgroundColor = [UIColor clearColor];
+    _edtCategoriaProfissional.floatingLabelActiveTextColor = [UIColor colorWithRed:0.278 green:0.314 blue:0.349 alpha:1];
+    _edtCategoriaProfissional.floatingLabelInactiveTextColor = [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1];
     
     _edtSenha.secureTextEntry = YES;
     _edtSenha.delegate = self;
@@ -74,6 +83,8 @@
     
     _edtCelular.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Celular" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1]}];
     
+    _edtCategoriaProfissional.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Categoria Profissional" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1]}];
+    
     _edtSenha.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Senha" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1]}];
     
     _edtConfirmarSenha.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Confirmar Senha" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1]}];
@@ -84,57 +95,56 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void) exibeMensagem:(NSString*) mensagem{
+    [TSMessage showNotificationWithTitle:@"Atenção"
+                                subtitle:mensagem
+                                    type:TSMessageNotificationTypeError];
+}
+
 -(BOOL) validarCampos{
     
-    NSDictionary *options = @{
-                              kCRToastNotificationTypeKey : @(CRToastTypeNavigationBar),
-                              kCRToastTextAlignmentKey : @(NSTextAlignmentCenter),
-                              kCRToastBackgroundColorKey : [UIColor redColor],
-                              kCRToastAnimationInTypeKey : @(CRToastAnimationTypeGravity),
-                              kCRToastAnimationOutTypeKey : @(CRToastAnimationTypeGravity),
-                              kCRToastAnimationInDirectionKey : @(CRToastAnimationDirectionLeft),
-                              kCRToastAnimationOutDirectionKey : @(CRToastAnimationDirectionRight),
-                              };
-    
-    [CRToastManager setDefaultOptions:options];
-    
     if (!_edtNome.text.length > 0) {
-        [CRToastManager showNotificationWithMessage:@"Informe o seu nome completo" completionBlock:nil];
+        [self exibeMensagem:@"Informe o seu nome completo"];
         return NO;
     }
     
     if (!_edtCPF.text.length > 0) {
-        [CRToastManager showNotificationWithMessage:@"Informe o seu CPF" completionBlock:nil];
+        [self exibeMensagem:@"Informe o seu CPF"];
         return NO;
     }
     
     if (!_edtEmail.text.length > 0) {
-        [CRToastManager showNotificationWithMessage:@"Informe o seu e-mail" completionBlock:nil];
+        [self exibeMensagem:@"Informe o seu e-mail"];
         return NO;
     }
     
     if (!_edtTelefone.text.length > 0) {
-        [CRToastManager showNotificationWithMessage:@"Informe o seu telefone residencial" completionBlock:nil];
+        [self exibeMensagem:@"Informe o seu telefone residencial"];
         return NO;
     }
     
     if (!_edtCelular.text.length > 0) {
-        [CRToastManager showNotificationWithMessage:@"Informe o seu celular" completionBlock:nil];
+        [self exibeMensagem:@"Informe o seu celular"];
+        return NO;
+    }
+    
+    if (!_edtCategoriaProfissional.text.length > 0) {
+        [self exibeMensagem:@"Informe sua categoria profissional"];
         return NO;
     }
     
     if (!_edtSenha.text.length > 0) {
-        [CRToastManager showNotificationWithMessage:@"Digite a sua senha" completionBlock:nil];
+        [self exibeMensagem:@"Digite a sua senha"];
         return NO;
     }
     
     if (!_edtConfirmarSenha.text.length > 0) {
-        [CRToastManager showNotificationWithMessage:@"Confirme a sua senha" completionBlock:nil];
+        [self exibeMensagem:@"Confirme a sua senha"];
         return NO;
     }
     
     if (![_edtConfirmarSenha.text isEqualToString:_edtSenha.text]) {
-        [CRToastManager showNotificationWithMessage:@"Senhas não conferem!" completionBlock:nil];
+        [self exibeMensagem:@"Senhas não conferem!"];
         return NO;
     }
     
@@ -161,12 +171,13 @@
         user[@"telefone"] = _edtTelefone.text;
         user[@"celular"]  = _edtCelular.text;
         user[@"cpf"] = _edtCPF.text;
+        user[@"categoriaProfissional"] = _edtCategoriaProfissional.text;
         
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error) {   // Hooray! Let them use the app now.
                 [[[UIAlertView alloc] initWithTitle:@"Cadastro" message:@"Cadastro efetuado com sucesso!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil] show];
             } else {
-                [CRToastManager showNotificationWithMessage:@"Erro ao efetuar cadastro" completionBlock:nil];
+                [self exibeMensagem:@"Erro ao efetuar cadastro"];
             }
             [hud hide:YES];
         }];
@@ -176,6 +187,10 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)btnCategoriaProfissionalClick:(id)sender {
+    
 }
 
 

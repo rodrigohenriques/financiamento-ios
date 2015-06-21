@@ -20,5 +20,6 @@
 @property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtConfirmarSenha;
 
 @property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtCPF;
+@property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtCategoriaProfissional;
 
 @end

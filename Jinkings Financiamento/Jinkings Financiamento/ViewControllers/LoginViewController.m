@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
-#import <CRToast/CRToast.h>
+#import <TSMessages/TSMessage.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
 #define placeHolderColor [UIColor whiteColor]
@@ -33,16 +33,6 @@
     _edtSenha.backgroundColor = [UIColor clearColor];
     _edtSenha.floatingLabelActiveTextColor = [UIColor whiteColor];
     
-    _options = @{
-                 kCRToastNotificationTypeKey : @(CRToastTypeNavigationBar),
-                 kCRToastTextAlignmentKey : @(NSTextAlignmentCenter),
-                 kCRToastBackgroundColorKey : [UIColor redColor],
-                 kCRToastAnimationInTypeKey : @(CRToastAnimationTypeGravity),
-                 kCRToastAnimationOutTypeKey : @(CRToastAnimationTypeGravity),
-                 kCRToastAnimationInDirectionKey : @(CRToastAnimationDirectionLeft),
-                 kCRToastAnimationOutDirectionKey : @(CRToastAnimationDirectionRight),
-                 };
-    
     PFUser *user = [PFUser currentUser];
     
     if (user) {
@@ -62,14 +52,20 @@
     [self performSegueWithIdentifier:@"sgCadastro" sender:nil];
 }
 
+-(void) exibeMensagem:(NSString*) mensagem{
+    [TSMessage showNotificationWithTitle:@"Atenção"
+                                subtitle:mensagem
+                                    type:TSMessageNotificationTypeError];
+}
+
 -(BOOL) validarCampos{
     if (!_edtEmail.text.length > 0) {
-        [CRToastManager showNotificationWithMessage:@"Informe o e-mail" completionBlock:nil];
+        [self exibeMensagem:@"Informe o e-mail"];
         return NO;
     }
     
     if (!_edtSenha.text.length > 0) {
-        [CRToastManager showNotificationWithMessage:@"Informe a senha" completionBlock:nil];
+        [self exibeMensagem:@"Informe a senha"];
         return NO;
     }
     
@@ -77,8 +73,6 @@
 }
 
 - (IBAction)btnEntrarClick:(id)sender {
-    
-    [CRToastManager setDefaultOptions:_options];
     
     if ([self validarCampos]) {
         
@@ -94,7 +88,7 @@
                                             if (user) {
                                                 [self performSegueWithIdentifier:@"sgPrincipal" sender:nil];
                                             } else {
-                                                [CRToastManager showNotificationWithMessage:@"Usuário ou senha inválido(a)" completionBlock:nil];
+                                                [self exibeMensagem:@"Usuário ou senha inválido(a)"];
                                             }
                                         }];
     }
