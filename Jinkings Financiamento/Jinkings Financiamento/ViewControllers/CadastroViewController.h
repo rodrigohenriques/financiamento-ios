@@ -10,7 +10,7 @@
 #import <RPFloatingPlaceholders/RPFloatingPlaceholderTextField.h>
 #import "BaseViewController.h"
 
-@interface CadastroViewController : BaseViewController <UITextFieldDelegate, UIAlertViewDelegate>
+@interface CadastroViewController : BaseViewController <UITextFieldDelegate, UIAlertViewDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtNome;
 @property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtEmail;

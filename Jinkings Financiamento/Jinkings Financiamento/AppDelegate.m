@@ -27,13 +27,17 @@
                                                     UIUserNotificationTypeBadge |
                                                     UIUserNotificationTypeSound);
     
-    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
-                                                                             categories:nil];
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes categories:nil];
+    
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
     
     [self customNavigationBar];
     return YES;
+}
+
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    NSLog(@"%@", [error localizedDescription]);
 }
 
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{

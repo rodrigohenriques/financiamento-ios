@@ -14,6 +14,7 @@
 @interface CadastroViewController ()
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) UIActionSheet *actionSheetCategoria;
 
 @end
 
@@ -24,6 +25,8 @@
     // Do any additional setup after loading the view.
     
     [_scrollView setContentSize:CGSizeMake(_scrollView.bounds.size.width, 600)];
+    
+    _actionSheetCategoria = [[UIActionSheet alloc] initWithTitle:@"Selecione sua categoria profissional" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Assalariado", @"Empresário", @"Autônomo", @"Profissional liberal", @"Aposentado ou pensionista", nil];
     
     _edtNome.delegate = self;
     _edtNome.backgroundColor = [UIColor clearColor];
@@ -190,8 +193,17 @@
 }
 
 - (IBAction)btnCategoriaProfissionalClick:(id)sender {
-    
+    [_actionSheetCategoria showInView:self.view];
 }
 
+#pragma mark - uiactionsheetdelegate
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (![[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Cancelar"]) {
+        if ([actionSheet isEqual:_actionSheetCategoria]) {
+            _edtCategoriaProfissional.text = [actionSheet buttonTitleAtIndex:buttonIndex];
+        }
+    }
+}
 
 @end

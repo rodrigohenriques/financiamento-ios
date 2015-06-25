@@ -48,7 +48,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [_scrollView setContentSize:CGSizeMake(_scrollView.bounds.size.width, 1250)];
+    [_scrollView setContentSize:CGSizeMake(600, 1250)];
     
     [self setupTextFields];
     
