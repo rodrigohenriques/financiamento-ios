@@ -1,67 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zVe-X9-WaX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="zVe-X9-WaX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="LoginViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5OI-zI-uh3"/>
-                        <viewControllerLayoutGuide type="bottom" id="BSX-YP-3wm"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AaX-0Z-ZSh" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="31" y="218" width="538" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Tqs-7e-DFo"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" id="AaX-0Z-ZSh" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="31" y="218" width="258" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m1a-Gv-GBW" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="31" y="270" width="538" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="hFS-jX-Q71"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" minimumFontSize="17" id="m1a-Gv-GBW" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="31" y="270" width="258" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sMW-GT-ex6">
-                                <rect key="frame" x="31" y="259" width="538" height="1"/>
+                            <view contentMode="scaleToFill" id="sMW-GT-ex6">
+                                <rect key="frame" x="31" y="259" width="258" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.35294117647058826" green="0.55686274509803924" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="ut4-J7-r3N"/>
-                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WcS-Wd-09r">
-                                <rect key="frame" x="31" y="311" width="538" height="1"/>
+                            <view contentMode="scaleToFill" id="WcS-Wd-09r">
+                                <rect key="frame" x="31" y="311" width="258" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.35294117647058826" green="0.55686274509803924" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="EfV-xL-4uu"/>
-                                </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-soluciona_splash" translatesAutoresizingMaskIntoConstraints="NO" id="Vl2-pC-IoA">
-                                <rect key="frame" x="195" y="73" width="210" height="125"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="4Na-7Q-9VR"/>
-                                    <constraint firstAttribute="width" constant="210" id="gH8-QM-Zcp"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-soluciona_splash" id="Vl2-pC-IoA">
+                                <rect key="frame" x="55" y="73" width="210" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dav-e2-RWI">
-                                <rect key="frame" x="31" y="337" width="538" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dav-e2-RWI">
+                                <rect key="frame" x="31" y="337" width="258" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.95251352440000003" green="0.83262924569999996" blue="0.067259902270000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="JuW-Dk-Oep"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Entrar">
                                     <color key="titleColor" red="0.066666666669999999" green="0.1843137255" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,11 +53,9 @@
                                     <action selector="btnEntrarClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2kd-ll-ptA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMH-6B-y0C">
-                                <rect key="frame" x="31" y="397" width="538" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="H2Q-6z-Rxp"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fMH-6B-y0C">
+                                <rect key="frame" x="31" y="397" width="258" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <state key="normal" title="Ainda não tem cadastro? Cadastre-se agora!">
                                     <color key="titleColor" red="0.9525135244014733" green="0.83262924571699992" blue="0.06725990227401081" alpha="1" colorSpace="calibratedRGB"/>
@@ -87,108 +67,93 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.066666666666666666" green="0.18431372549019609" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="fMH-6B-y0C" secondAttribute="trailing" constant="15" id="2ll-Hr-LJk"/>
-                            <constraint firstItem="Dav-e2-RWI" firstAttribute="top" secondItem="WcS-Wd-09r" secondAttribute="bottom" constant="25" id="5ZY-02-DuQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="m1a-Gv-GBW" secondAttribute="trailing" constant="15" id="89H-xe-Duz"/>
-                            <constraint firstItem="AaX-0Z-ZSh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="IsP-g7-Ate"/>
-                            <constraint firstAttribute="centerX" secondItem="Vl2-pC-IoA" secondAttribute="centerX" id="NxU-vN-svM"/>
-                            <constraint firstItem="fMH-6B-y0C" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="P7B-rr-H0z"/>
-                            <constraint firstItem="sMW-GT-ex6" firstAttribute="top" secondItem="AaX-0Z-ZSh" secondAttribute="bottom" constant="1" id="ReI-IZ-Gzj"/>
-                            <constraint firstItem="m1a-Gv-GBW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="T5B-ar-E2a"/>
-                            <constraint firstItem="WcS-Wd-09r" firstAttribute="top" secondItem="m1a-Gv-GBW" secondAttribute="bottom" constant="1" id="Tau-AT-Xcd"/>
-                            <constraint firstItem="Dav-e2-RWI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="VCy-UJ-hTu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WcS-Wd-09r" secondAttribute="trailing" constant="15" id="chq-Cu-Rov"/>
-                            <constraint firstItem="m1a-Gv-GBW" firstAttribute="top" secondItem="sMW-GT-ex6" secondAttribute="bottom" constant="10" id="f0E-v7-xZ7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="sMW-GT-ex6" secondAttribute="trailing" constant="15" id="fcm-VA-Lf3"/>
-                            <constraint firstItem="WcS-Wd-09r" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="geL-8l-gOf"/>
-                            <constraint firstItem="fMH-6B-y0C" firstAttribute="top" secondItem="Dav-e2-RWI" secondAttribute="bottom" constant="15" id="gfl-Yy-hPJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AaX-0Z-ZSh" secondAttribute="trailing" constant="15" id="kWb-LU-aDR"/>
-                            <constraint firstItem="sMW-GT-ex6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="15" id="tQk-Xu-yNF"/>
-                            <constraint firstItem="Vl2-pC-IoA" firstAttribute="top" secondItem="5OI-zI-uh3" secondAttribute="bottom" constant="73" id="tUB-YW-aA6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Dav-e2-RWI" secondAttribute="trailing" constant="15" id="tvE-OG-TTX"/>
-                            <constraint firstItem="AaX-0Z-ZSh" firstAttribute="top" secondItem="Vl2-pC-IoA" secondAttribute="bottom" constant="20" id="uEQ-Qp-gsz"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="H0c-SJ-872"/>
                     <connections>
                         <outlet property="edtEmail" destination="AaX-0Z-ZSh" id="CG7-hu-gwj"/>
                         <outlet property="edtSenha" destination="m1a-Gv-GBW" id="Xus-Hr-46d"/>
-                        <segue destination="r0b-E5-9us" kind="show" identifier="sgPrincipal" id="9FZ-kd-WIc"/>
-                        <segue destination="cTP-HH-f0g" kind="show" identifier="sgCadastro" id="aGT-3r-aRS"/>
+                        <segue destination="r0b-E5-9us" kind="push" identifier="sgPrincipal" id="9FZ-kd-WIc"/>
+                        <segue destination="cTP-HH-f0g" kind="push" identifier="sgCadastro" id="aGT-3r-aRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2373" y="314"/>
+            <point key="canvasLocation" x="1265.5999999999999" y="297.25333333333333"/>
         </scene>
         <!--Cadastro-->
         <scene sceneID="a0r-99-MGe">
             <objects>
                 <viewController id="cTP-HH-f0g" customClass="CadastroViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nBl-BE-AWx"/>
-                        <viewControllerLayoutGuide type="bottom" id="s2m-f8-3oN"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LaV-vs-rwS" customClass="UIScrollView">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DADOS PESSOAIS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFp-b6-GtP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DADOS PESSOAIS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MFp-b6-GtP">
                                 <rect key="frame" x="16" y="16" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.066666666669999999" green="0.1843137255" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.82352941180000006" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome Completo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ryp-Dg-HFW" customClass="RPFloatingPlaceholderTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome Completo" minimumFontSize="17" id="Ryp-Dg-HFW" customClass="RPFloatingPlaceholderTextField">
                                 <rect key="frame" x="16" y="57" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hyb-Ue-8cC">
+                            <view contentMode="scaleToFill" id="hyb-Ue-8cC">
                                 <rect key="frame" x="16" y="97" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CPF" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z0z-00-3cg" customClass="RPFloatingPlaceholderTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CPF" minimumFontSize="17" id="Z0z-00-3cg" customClass="RPFloatingPlaceholderTextField">
                                 <rect key="frame" x="16" y="115" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tGU-DA-xYl">
+                            <view contentMode="scaleToFill" id="tGU-DA-xYl">
                                 <rect key="frame" x="16" y="155" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Telefone Residencial" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q3m-3c-mqn" customClass="RPFloatingPlaceholderTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Telefone Residencial" minimumFontSize="17" id="Q3m-3c-mqn" customClass="RPFloatingPlaceholderTextField">
                                 <rect key="frame" x="16" y="173" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEt-2y-Mph">
+                            <view contentMode="scaleToFill" id="MEt-2y-Mph">
                                 <rect key="frame" x="16" y="213" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Celular" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WK4-Zb-ys9" customClass="RPFloatingPlaceholderTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Celular" minimumFontSize="17" id="WK4-Zb-ys9" customClass="RPFloatingPlaceholderTextField">
                                 <rect key="frame" x="16" y="231" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmA-te-7tj">
+                            <view contentMode="scaleToFill" id="hmA-te-7tj">
                                 <rect key="frame" x="16" y="271" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Categoria Profissional" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7KC-jb-WpB" customClass="RPFloatingPlaceholderTextField">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Categoria Profissional" clearsOnBeginEditing="YES" minimumFontSize="17" id="7KC-jb-WpB" customClass="RPFloatingPlaceholderTextField">
                                 <rect key="frame" x="16" y="289" width="245" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WoY-jO-0gN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WoY-jO-0gN">
                                 <rect key="frame" x="269" y="291" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="drop-down">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -196,45 +161,53 @@
                                     <action selector="btnCategoriaProfissionalClick:" destination="cTP-HH-f0g" eventType="touchUpInside" id="3ga-Q1-Mkz"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Re-Fe-pEw">
+                            <view contentMode="scaleToFill" id="2Re-Fe-pEw">
                                 <rect key="frame" x="16" y="329" width="245" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DADOS DE ACESSO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fr-ds-oyv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DADOS DE ACESSO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Fr-ds-oyv">
                                 <rect key="frame" x="16" y="343" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.066666666669999999" green="0.1843137255" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.82352941180000006" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TCm-v0-hWD" customClass="RPFloatingPlaceholderTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" id="TCm-v0-hWD" customClass="RPFloatingPlaceholderTextField">
                                 <rect key="frame" x="16" y="384" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P8J-Bo-1pG">
+                            <view contentMode="scaleToFill" id="P8J-Bo-1pG">
                                 <rect key="frame" x="16" y="424" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o6v-US-cgj" customClass="RPFloatingPlaceholderTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" minimumFontSize="17" id="o6v-US-cgj" customClass="RPFloatingPlaceholderTextField">
                                 <rect key="frame" x="16" y="442" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JwD-gT-sQp">
+                            <view contentMode="scaleToFill" id="JwD-gT-sQp">
                                 <rect key="frame" x="16" y="482" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirmar Senha" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6aW-E9-JF8" customClass="RPFloatingPlaceholderTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirmar Senha" minimumFontSize="17" id="6aW-E9-JF8" customClass="RPFloatingPlaceholderTextField">
                                 <rect key="frame" x="16" y="500" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BlI-m1-iT0">
+                            <view contentMode="scaleToFill" id="BlI-m1-iT0">
                                 <rect key="frame" x="16" y="540" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -269,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwe-8I-xsO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2373.75" y="1110.2112676056338"/>
+            <point key="canvasLocation" x="1266" y="1051"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ufg-eM-a8V">
@@ -290,389 +263,301 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5x-N3-ABv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3348.75" y="315.84507042253517"/>
+            <point key="canvasLocation" x="1786" y="298.99999999999994"/>
         </scene>
         <!--Simulação-->
         <scene sceneID="22p-Uy-UKN">
             <objects>
                 <viewController title="Simulação" id="1V8-NT-Q9v" customClass="FormularioViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QOD-jc-A9Q"/>
-                        <viewControllerLayoutGuide type="bottom" id="NbN-1g-BVg"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pGE-ZS-jlA" customClass="UIScrollView">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DADOS DO IMÓVEL DESEJADO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osb-uU-DQU">
-                                <rect key="frame" x="26" y="48" width="548" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DADOS DO IMÓVEL DESEJADO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Osb-uU-DQU">
+                                <rect key="frame" x="16" y="48" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1058823529" green="0.24313725489999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="0.95251352440000003" green="0.83262924569999996" blue="0.067259902270000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="48" width="368" height="21"/>
-                                </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CEP" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3Z-Ba-gOJ" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="42" y="89" width="500" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CEP" minimumFontSize="17" id="e3Z-Ba-gOJ" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="89" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="89" width="330" height="40"/>
-                                </variation>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Bd-MA-VZI">
-                                <rect key="frame" x="42" y="130" width="500" height="1"/>
+                            <view contentMode="scaleToFill" id="9Bd-MA-VZI">
+                                <rect key="frame" x="16" y="130" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="130" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bairro" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4bO-fA-MCX" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="42" y="148" width="538" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bairro" minimumFontSize="17" id="4bO-fA-MCX" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="148" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="148" width="368" height="40"/>
-                                </variation>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iTE-ct-DRk">
-                                <rect key="frame" x="42" y="189" width="538" height="1"/>
+                            <view contentMode="scaleToFill" id="iTE-ct-DRk">
+                                <rect key="frame" x="16" y="189" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="189" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Logradouro" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Qy-3r-j5J" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="42" y="207" width="538" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Logradouro" minimumFontSize="17" id="2Qy-3r-j5J" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="207" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="207" width="368" height="40"/>
-                                </variation>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wgF-mp-2zP">
-                                <rect key="frame" x="42" y="248" width="538" height="1"/>
+                            <view contentMode="scaleToFill" id="wgF-mp-2zP">
+                                <rect key="frame" x="16" y="248" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="248" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UF" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3zg-23-0Ed" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="42" y="266" width="538" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="UF" minimumFontSize="17" id="3zg-23-0Ed" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="266" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="266" width="368" height="40"/>
-                                </variation>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gy9-Un-RWa">
-                                <rect key="frame" x="42" y="307" width="538" height="1"/>
+                            <view contentMode="scaleToFill" id="gy9-Un-RWa">
+                                <rect key="frame" x="16" y="307" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="307" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Município" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5x-Q5-Hut" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="42" y="325" width="538" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Município" minimumFontSize="17" id="h5x-Q5-Hut" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="325" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="325" width="368" height="40"/>
-                                </variation>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sAN-DY-Ihb">
-                                <rect key="frame" x="42" y="366" width="538" height="1"/>
+                            <view contentMode="scaleToFill" id="sAN-DY-Ihb">
+                                <rect key="frame" x="16" y="366" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="366" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tipo do imóvel" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZQQ-tU-2vG" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="42" y="384" width="495" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tipo do imóvel" clearsOnBeginEditing="YES" minimumFontSize="17" id="ZQQ-tU-2vG" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="384" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="384" width="495" height="40"/>
-                                </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27C-XC-U9G">
-                                <rect key="frame" x="545" y="382" width="35" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="27C-XC-U9G">
+                                <rect key="frame" x="274" y="389" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="drop-down">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="354" y="389" width="30" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="actionSheetTipoImovel:" destination="1V8-NT-Q9v" eventType="touchUpInside" id="MQM-KQ-SpA"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIl-69-Ffu">
-                                <rect key="frame" x="42" y="425" width="500" height="1"/>
+                            <view contentMode="scaleToFill" id="eIl-69-Ffu">
+                                <rect key="frame" x="16" y="425" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="425" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Valor do imóvel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S2E-dG-Osg" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="42" y="443" width="538" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Valor do imóvel" minimumFontSize="17" id="S2E-dG-Osg" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="443" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="443" width="368" height="40"/>
-                                </variation>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rHh-0W-QBa">
-                                <rect key="frame" x="42" y="484" width="538" height="1"/>
+                            <view contentMode="scaleToFill" id="rHh-0W-QBa">
+                                <rect key="frame" x="16" y="484" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="484" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DADOS DO FINANCIAMENTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7c-OX-kfr">
-                                <rect key="frame" x="42" y="513" width="538" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DADOS DO FINANCIAMENTO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d7c-OX-kfr">
+                                <rect key="frame" x="16" y="513" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1058823529" green="0.24313725489999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="0.95251352440000003" green="0.83262924569999996" blue="0.067259902270000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="513" width="368" height="21"/>
-                                </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Possui financiamento imobiliário?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yzy-2M-JHo" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="42" y="551" width="495" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Possui financiamento imobiliário?" minimumFontSize="17" id="yzy-2M-JHo" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="551" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="551" width="495" height="40"/>
-                                </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J68-pq-eg9">
-                                <rect key="frame" x="545" y="554" width="35" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="J68-pq-eg9">
+                                <rect key="frame" x="274" y="554" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="drop-down">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="354" y="554" width="30" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="actionSheetPossuiFinanciamento:" destination="1V8-NT-Q9v" eventType="touchUpInside" id="U84-2y-Xa7"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UlL-gw-rdy">
-                                <rect key="frame" x="42" y="592" width="500" height="1"/>
+                            <view contentMode="scaleToFill" id="UlL-gw-rdy">
+                                <rect key="frame" x="16" y="592" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="592" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Valor a ser financiado" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gen-5i-DCk" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="42" y="610" width="538" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Valor a ser financiado" minimumFontSize="17" id="Gen-5i-DCk" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="610" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="610" width="368" height="40"/>
-                                </variation>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zg3-Iy-5Tf">
-                                <rect key="frame" x="42" y="651" width="538" height="1"/>
+                            <view contentMode="scaleToFill" id="zg3-Iy-5Tf">
+                                <rect key="frame" x="16" y="651" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="651" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Prazo desejado (até 360 meses)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kbD-fp-geb" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="42" y="669" width="538" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Prazo desejado (até 360 meses)" minimumFontSize="17" id="kbD-fp-geb" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="669" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="669" width="368" height="40"/>
-                                </variation>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DgI-HW-kOZ">
-                                <rect key="frame" x="42" y="710" width="538" height="1"/>
+                            <view contentMode="scaleToFill" id="DgI-HW-kOZ">
+                                <rect key="frame" x="16" y="710" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="710" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Possui imóvel no município do financiamento?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6FQ-Ld-lLK" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="42" y="728" width="495" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Possui imóvel no município do financiamento?" minimumFontSize="17" id="6FQ-Ld-lLK" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="728" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="728" width="495" height="40"/>
-                                </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZiI-W3-Y9W">
-                                <rect key="frame" x="545" y="731" width="35" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZiI-W3-Y9W">
+                                <rect key="frame" x="274" y="731" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="drop-down">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="354" y="731" width="30" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="actionSheetMunicipioFinanciamento:" destination="1V8-NT-Q9v" eventType="touchUpInside" id="VGF-iz-hYv"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMw-9u-3EY">
-                                <rect key="frame" x="42" y="769" width="500" height="1"/>
+                            <view contentMode="scaleToFill" id="qMw-9u-3EY">
+                                <rect key="frame" x="16" y="769" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="769" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Possui imóvel no município onde reside?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tsj-EE-wt5" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="42" y="787" width="495" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Possui imóvel no município onde reside?" minimumFontSize="17" id="tsj-EE-wt5" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="787" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="787" width="495" height="40"/>
-                                </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zPt-Ws-5C9">
-                                <rect key="frame" x="545" y="790" width="35" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zPt-Ws-5C9">
+                                <rect key="frame" x="274" y="790" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="drop-down">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="354" y="790" width="30" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="actionSheetMunicipioReside:" destination="1V8-NT-Q9v" eventType="touchUpInside" id="5aq-Iw-1iT"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gmh-y4-SoO">
-                                <rect key="frame" x="42" y="828" width="500" height="1"/>
+                            <view contentMode="scaleToFill" id="Gmh-y4-SoO">
+                                <rect key="frame" x="16" y="828" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="828" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Data de nascimento do comprador" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dgm-Hr-pTr" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="42" y="846" width="538" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Data de nascimento do comprador" minimumFontSize="17" id="dgm-Hr-pTr" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="846" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="846" width="368" height="40"/>
-                                </variation>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xN1-ka-tpK">
-                                <rect key="frame" x="42" y="887" width="538" height="1"/>
+                            <view contentMode="scaleToFill" id="xN1-ka-tpK">
+                                <rect key="frame" x="16" y="887" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="887" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DADOS BANCÁRIOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEw-rs-dSj">
-                                <rect key="frame" x="42" y="922" width="538" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DADOS BANCÁRIOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cEw-rs-dSj">
+                                <rect key="frame" x="16" y="922" width="288" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1058823529" green="0.24313725489999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="0.95251352440000003" green="0.83262924569999996" blue="0.067259902270000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="922" width="368" height="21"/>
-                                </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="É correntista no Banco do Brasil?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yGy-b6-UzD" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="42" y="962" width="500" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="É correntista no Banco do Brasil?" minimumFontSize="17" id="yGy-b6-UzD" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="962" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="962" width="500" height="40"/>
-                                </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afz-Z2-l5m">
-                                <rect key="frame" x="545" y="964" width="35" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="afz-Z2-l5m">
+                                <rect key="frame" x="274" y="964" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="drop-down">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="354" y="964" width="30" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="actionSheetECorrentista:" destination="1V8-NT-Q9v" eventType="touchUpInside" id="FVe-3j-dQm"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8YU-Am-Huf">
-                                <rect key="frame" x="42" y="1003" width="245" height="1"/>
+                            <view contentMode="scaleToFill" id="8YU-Am-Huf">
+                                <rect key="frame" x="16" y="1003" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="1003" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Agência" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r2R-BP-ZSU" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="36" y="1022" width="288" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Agência" minimumFontSize="17" id="r2R-BP-ZSU" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="1022" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="1022" width="368" height="40"/>
-                                </variation>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OlO-MR-Wph">
-                                <rect key="frame" x="167" y="1063" width="288" height="1"/>
+                            <view contentMode="scaleToFill" id="OlO-MR-Wph">
+                                <rect key="frame" x="16" y="1063" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="1063" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Conta" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OR9-x9-J6G" customClass="RPFloatingPlaceholderTextField">
-                                <rect key="frame" x="167" y="1080" width="288" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Conta" minimumFontSize="17" id="OR9-x9-J6G" customClass="RPFloatingPlaceholderTextField">
+                                <rect key="frame" x="16" y="1080" width="288" height="40"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.2784313725" green="0.31372549020000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="1080" width="368" height="40"/>
-                                </variation>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bED-rs-G7k">
-                                <rect key="frame" x="167" y="1120" width="288" height="1"/>
+                            <view contentMode="scaleToFill" id="bED-rs-G7k">
+                                <rect key="frame" x="16" y="1120" width="288" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.67843137249999996" green="0.76078431369999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="1120" width="368" height="1"/>
-                                </variation>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VQ-dz-u76">
-                                <rect key="frame" x="167" y="1161" width="288" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6VQ-dz-u76">
+                                <rect key="frame" x="16" y="1161" width="288" height="45"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.95251352440000003" green="0.83262924569999996" blue="0.067259902270000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Enviar">
                                     <color key="titleColor" red="0.066666666669999999" green="0.1843137255" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="56" y="1161" width="288" height="45"/>
-                                </variation>
                                 <connections>
                                     <action selector="btnEnviarClick:" destination="1V8-NT-Q9v" eventType="touchUpInside" id="gT8-zl-QX0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwf-UC-CBb">
-                                <rect key="frame" x="550" y="94" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Dwf-UC-CBb">
+                                <rect key="frame" x="274" y="94" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="find">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="354" y="94" width="30" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="btnPesquisarCepClick:" destination="1V8-NT-Q9v" eventType="touchUpInside" id="miU-8g-wYY"/>
                                 </connections>
@@ -703,54 +588,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41Y-Sh-0Q1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4270.5" y="-369"/>
+            <point key="canvasLocation" x="2277.3333333333335" y="-349.31999999999999"/>
         </scene>
         <!--Enviadas-->
         <scene sceneID="Yx1-q4-e3T">
             <objects>
                 <viewController title="Enviadas" id="ApH-Gd-MHY" customClass="EnviadosViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IT0-QN-9qu"/>
-                        <viewControllerLayoutGuide type="bottom" id="GoW-9X-wso"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bhI-vH-fJ6">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Uxk-oU-Qcu">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="22" sectionFooterHeight="22" id="Uxk-oU-Qcu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.066666666669999999" green="0.1843137255" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Uxk-oU-Qcu" secondAttribute="trailing" constant="-16" id="11V-Zw-ZuM"/>
-                            <constraint firstItem="Uxk-oU-Qcu" firstAttribute="leading" secondItem="bhI-vH-fJ6" secondAttribute="leadingMargin" constant="-16" id="2IB-wg-khI"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="Uxk-oU-Qcu" secondAttribute="bottom" id="ITA-wC-OpF"/>
-                            <constraint firstItem="Uxk-oU-Qcu" firstAttribute="top" secondItem="IT0-QN-9qu" secondAttribute="bottom" id="PGx-uj-2hz"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="mostViewed" id="M6O-8Y-vJp"/>
                     <connections>
                         <outlet property="tabela" destination="Uxk-oU-Qcu" id="udY-vC-mN0"/>
-                        <segue destination="A8o-K1-iBP" kind="show" identifier="sgDetalheSimulacao" id="OrB-AJ-XpH"/>
+                        <segue destination="A8o-K1-iBP" kind="push" identifier="sgDetalheSimulacao" id="OrB-AJ-XpH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILB-5F-Nit" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4271.25" y="314.78873239436615"/>
+            <point key="canvasLocation" x="2278" y="297.99999999999994"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="91c-v2-LrB">
             <objects>
                 <viewController id="A8o-K1-iBP" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="COE-dN-790"/>
-                        <viewControllerLayoutGuide type="bottom" id="Hgg-XN-zYR"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="J8X-gA-0AF">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -758,18 +630,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5O7-ue-KxB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5231.25" y="315.84507042253517"/>
+            <point key="canvasLocation" x="2790" y="298.99999999999994"/>
         </scene>
         <!--Perfil-->
         <scene sceneID="uN2-xe-JjG">
             <objects>
                 <viewController title="Perfil" id="nql-EY-Yp9" customClass="PerfilViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XJd-2B-hoB"/>
-                        <viewControllerLayoutGuide type="bottom" id="OWe-x1-cMV"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="e2d-lX-oSo">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -777,7 +645,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bzf-ju-XSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4271.25" y="973.94366197183092"/>
+            <point key="canvasLocation" x="2278" y="921.99999999999989"/>
         </scene>
         <!--Item-->
         <scene sceneID="se9-wp-qZw">
@@ -797,7 +665,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3t-hD-sTs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1376.25" y="314.78873239436615"/>
+            <point key="canvasLocation" x="734" y="297.99999999999994"/>
         </scene>
     </scenes>
     <resources>
@@ -805,4 +673,9 @@
         <image name="find" width="190" height="194"/>
         <image name="logo-soluciona_splash" width="166" height="101"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

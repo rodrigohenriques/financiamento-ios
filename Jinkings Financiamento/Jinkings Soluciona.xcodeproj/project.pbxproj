@@ -463,8 +463,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Fred Halen Jinkings (D43YPQNXZC)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fred Halen Jinkings (D43YPQNXZC)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -486,7 +486,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "c9a76ae9-e548-4a55-a429-7fa8c22d3b94";
+				PROVISIONING_PROFILE = "1fbafc16-cfa7-4265-a0fe-ab3d844109fd";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -508,8 +508,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Fred Halen Jinkings (D43YPQNXZC)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fred Halen Jinkings (D43YPQNXZC)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -524,7 +524,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "c9a76ae9-e548-4a55-a429-7fa8c22d3b94";
+				PROVISIONING_PROFILE = "1fbafc16-cfa7-4265-a0fe-ab3d844109fd";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -536,7 +536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Fred Halen Jinkings (D43YPQNXZC)";
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.7.4",
@@ -544,7 +544,7 @@
 				INFOPLIST_FILE = "Jinkings Financiamento/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Jinkings Soluciona";
-				PROVISIONING_PROFILE = "c9a76ae9-e548-4a55-a429-7fa8c22d3b94";
+				PROVISIONING_PROFILE = "1fbafc16-cfa7-4265-a0fe-ab3d844109fd";
 			};
 			name = Debug;
 		};
@@ -554,7 +554,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Fred Halen Jinkings (D43YPQNXZC)";
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.7.4",
@@ -562,7 +562,7 @@
 				INFOPLIST_FILE = "Jinkings Financiamento/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Jinkings Soluciona";
-				PROVISIONING_PROFILE = "c9a76ae9-e548-4a55-a429-7fa8c22d3b94";
+				PROVISIONING_PROFILE = "1fbafc16-cfa7-4265-a0fe-ab3d844109fd";
 			};
 			name = Release;
 		};
