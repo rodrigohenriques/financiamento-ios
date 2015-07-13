@@ -467,7 +467,7 @@
     }
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.mode = MBProgressHUDModeDeterminate;
     hud.labelText = @"Enviando";
     
     [hud show:YES];

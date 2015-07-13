@@ -24,6 +24,8 @@
 		79409F981B23E800004A97AF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79409F971B23E800004A97AF /* Bolts.framework */; };
 		798967A41B2CFA15003DC09A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798967A31B2CFA15003DC09A /* BaseViewController.m */; };
 		798967A71B2D1964003DC09A /* PerfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798967A61B2D1964003DC09A /* PerfilViewController.m */; };
+		799806BC1B42296E00C3940E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799806BA1B42296E00C3940E /* Fabric.framework */; };
+		799806BD1B42296E00C3940E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799806BB1B42296E00C3940E /* Crashlytics.framework */; };
 		79A37C731B35FCA80024AB42 /* SimulacaoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79A37C721B35FCA80024AB42 /* SimulacaoCell.xib */; };
 		79A37C761B35FCD30024AB42 /* SimulacaoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A37C751B35FCD30024AB42 /* SimulacaoCell.m */; };
 		79A37C791B3602180024AB42 /* Simulacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A37C781B3602180024AB42 /* Simulacao.m */; };
@@ -65,6 +67,8 @@
 		798967A31B2CFA15003DC09A /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		798967A51B2D1964003DC09A /* PerfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerfilViewController.h; sourceTree = "<group>"; };
 		798967A61B2D1964003DC09A /* PerfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfilViewController.m; sourceTree = "<group>"; };
+		799806BA1B42296E00C3940E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		799806BB1B42296E00C3940E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		79A37C721B35FCA80024AB42 /* SimulacaoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimulacaoCell.xib; sourceTree = "<group>"; };
 		79A37C741B35FCD30024AB42 /* SimulacaoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimulacaoCell.h; sourceTree = "<group>"; };
 		79A37C751B35FCD30024AB42 /* SimulacaoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimulacaoCell.m; sourceTree = "<group>"; };
@@ -110,10 +114,12 @@
 				79409F941B23E72C004A97AF /* Social.framework in Frameworks */,
 				79409F931B23E727004A97AF /* Accounts.framework in Frameworks */,
 				79409F8E1B23E66C004A97AF /* libsqlite3.dylib in Frameworks */,
+				799806BC1B42296E00C3940E /* Fabric.framework in Frameworks */,
 				79409F8C1B23E663004A97AF /* libz.dylib in Frameworks */,
 				79409F961B23E78A004A97AF /* Parse.framework in Frameworks */,
 				79409F8A1B23E65A004A97AF /* SystemConfiguration.framework in Frameworks */,
 				79409F861B23E650004A97AF /* Security.framework in Frameworks */,
+				799806BD1B42296E00C3940E /* Crashlytics.framework in Frameworks */,
 				79409F841B23E64B004A97AF /* QuartzCore.framework in Frameworks */,
 				79409F821B23E645004A97AF /* MobileCoreServices.framework in Frameworks */,
 				79409F801B23E640004A97AF /* CoreLocation.framework in Frameworks */,
@@ -142,6 +148,8 @@
 		7535B697D8A2FD7FB96D6A84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				799806BA1B42296E00C3940E /* Fabric.framework */,
+				799806BB1B42296E00C3940E /* Crashlytics.framework */,
 				79409F971B23E800004A97AF /* Bolts.framework */,
 				79409F951B23E78A004A97AF /* Parse.framework */,
 				79409F911B23E67E004A97AF /* Social.framework */,
@@ -306,6 +314,7 @@
 				79D0979D1AF6C4F300DF870C /* Frameworks */,
 				79D0979E1AF6C4F300DF870C /* Resources */,
 				DC9D05DD7AD7C1955F117397 /* Copy Pods Resources */,
+				799806B91B42292500C3940E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -369,6 +378,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		799806B91B42292500C3940E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 87e123c028e9d07c9d56fb96cd99ec42d15675e8 2c8be03d25b39992db6898457162aaa6534f6d099e6ee5a323852a2536d87146";
+		};
 		DC9D05DD7AD7C1955F117397 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -486,7 +508,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "4e03f31d-689f-4b64-950a-38a50dd4cf07";
+				PROVISIONING_PROFILE = "7d0947d7-ec63-490f-b290-025512c76305";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -524,7 +546,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "4e03f31d-689f-4b64-950a-38a50dd4cf07";
+				PROVISIONING_PROFILE = "7d0947d7-ec63-490f-b290-025512c76305";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -541,11 +563,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.7.4",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Jinkings Financiamento/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Jinkings Soluciona";
-				PROVISIONING_PROFILE = "4e03f31d-689f-4b64-950a-38a50dd4cf07";
+				PROVISIONING_PROFILE = "7d0947d7-ec63-490f-b290-025512c76305";
 			};
 			name = Debug;
 		};
@@ -560,11 +583,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.7.4",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Jinkings Financiamento/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "Jinkings Soluciona";
-				PROVISIONING_PROFILE = "4e03f31d-689f-4b64-950a-38a50dd4cf07";
+				PROVISIONING_PROFILE = "7d0947d7-ec63-490f-b290-025512c76305";
 			};
 			name = Release;
 		};

@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
 #import <Parse/Parse.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()
 
@@ -18,6 +19,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [Fabric with:@[CrashlyticsKit]];
+
     [Parse enableLocalDatastore];
     
     [Parse setApplicationId:@"tcPa2fsP1bULHFjD6ZG0qHxmAILBYku4TosH8uX2"
