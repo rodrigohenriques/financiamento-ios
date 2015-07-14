@@ -34,12 +34,14 @@
 @property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtECorrentista;
 @property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtAgencia;
 @property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtConta;
+@property (strong, nonatomic) IBOutlet RPFloatingPlaceholderTextField *edtCondicaoImovel;
 
 @property (nonatomic, strong) UIActionSheet *actionSheetTipoImovel;
 @property (nonatomic, strong) UIActionSheet *actionSheetImovelMunicipioFinanciamento;
 @property (nonatomic, strong) UIActionSheet *actionSheetImovelMunicipioReside;
 @property (nonatomic, strong) UIActionSheet *actionSheetPossuiFinanciamento;
 @property (nonatomic, strong) UIActionSheet *actionSheetECorrentista;
+@property (nonatomic, strong) UIActionSheet *actionSheetCondicaoImovel;
 
 @end
 
@@ -60,7 +62,9 @@
     
     _actionSheetPossuiFinanciamento = [[UIActionSheet alloc] initWithTitle:@"Possui financiamento imobiliário?" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Sim", @"Não", nil];
     
-    _actionSheetTipoImovel = [[UIActionSheet alloc] initWithTitle:@"Tipo do imóvel" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Comercial Novo", @"Comercial Usado", @"Residencial Novo", @"Residencial Usado", nil];
+    _actionSheetTipoImovel = [[UIActionSheet alloc] initWithTitle:@"Tipo do imóvel" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Comercial", @"Residencial", nil];
+    
+    _actionSheetCondicaoImovel = [[UIActionSheet alloc] initWithTitle:@"Condição do imóvel" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Novo", @"Usado", @"Em construção", nil];
     
     self.navigationItem.title = @"Simulação";
     
@@ -147,6 +151,11 @@
     _edtTipoImovel.floatingLabelActiveTextColor = [UIColor colorWithRed:0.278 green:0.314 blue:0.349 alpha:1];
     _edtTipoImovel.floatingLabelInactiveTextColor = [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1];
     
+    _edtCondicaoImovel.delegate = self;
+    _edtCondicaoImovel.backgroundColor = [UIColor clearColor];
+    _edtCondicaoImovel.floatingLabelActiveTextColor = [UIColor colorWithRed:0.278 green:0.314 blue:0.349 alpha:1];
+    _edtCondicaoImovel.floatingLabelInactiveTextColor = [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1];
+    
     _edtValorImovel.delegate = self;
     _edtValorImovel.backgroundColor = [UIColor clearColor];
     _edtValorImovel.floatingLabelActiveTextColor = [UIColor colorWithRed:0.278 green:0.314 blue:0.349 alpha:1];
@@ -214,7 +223,9 @@
     
     _edtTipoImovel.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Tipo do imóvel" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1]}];
     
-    _edtValorImovel.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Valor do imóvel" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1]}];
+    _edtCondicaoImovel.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Condição do imóvel" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1]}];
+    
+    _edtValorImovel.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Valor aproximado do imóvel" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1]}];
     
     _edtImovelMunicipioFinanciamento.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Possui imóvel no município do financiamento?" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1]}];
     
@@ -254,6 +265,9 @@
 - (IBAction)actionSheetPossuiFinanciamento:(id)sender {
     [_actionSheetPossuiFinanciamento showInView:self.view];
 }
+- (IBAction)actionSheetCondicaoImovel:(id)sender {
+    [_actionSheetCondicaoImovel showInView:self.view];
+}
 
 #pragma mark - UIActionSheetDelegate
 
@@ -277,6 +291,10 @@
         
         if ([actionSheet isEqual:_actionSheetPossuiFinanciamento]) {
             _edtPossuiFinanciamento.text = [actionSheet buttonTitleAtIndex:buttonIndex];
+        }
+        
+        if ([actionSheet isEqual:_actionSheetCondicaoImovel]) {
+            _edtCondicaoImovel.text = [actionSheet buttonTitleAtIndex:buttonIndex];
         }
     }
 }
@@ -402,12 +420,17 @@
     }
     
     if (_edtTipoImovel.text.length <= 0) {
-        [self exibeMensagem:@"Selecione o Tipo do Imóvel"];
+        [self exibeMensagem:@"Selecione o tipo do imóvel"];
+        return NO;
+    }
+    
+    if (_edtCondicaoImovel.text.length <= 0) {
+        [self exibeMensagem:@"Selecione a condição do imóvel"];
         return NO;
     }
     
     if (_edtValorImovel.text.length <= 0) {
-        [self exibeMensagem:@"Informe o valor do imóvel"];
+        [self exibeMensagem:@"Informe o valor aproximado do imóvel"];
         return NO;
     }
     
@@ -482,6 +505,7 @@
     simulacao[@"uf"] = _edtUF.text;
     simulacao[@"municipio"] = _edtMunicipio.text;
     simulacao[@"tipoImovel"] = _edtTipoImovel.text;
+    simulacao[@"condicaoImovel"] = _edtCondicaoImovel.text;
     simulacao[@"valorImovel"] = _edtValorImovel.text;
     
     simulacao[@"possuiFinanciamento"] = [_edtPossuiFinanciamento.text isEqualToString:@"Sim"] ? [NSNumber numberWithBool:YES] : [NSNumber numberWithBool:NO];
@@ -539,6 +563,7 @@
     _edtECorrentista.text = @"";
     _edtAgencia.text = @"";
     _edtConta.text = @"";
+    _edtCondicaoImovel.text = @"";
 }
 
 

@@ -26,6 +26,7 @@
 		798967A71B2D1964003DC09A /* PerfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798967A61B2D1964003DC09A /* PerfilViewController.m */; };
 		799806BC1B42296E00C3940E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799806BA1B42296E00C3940E /* Fabric.framework */; };
 		799806BD1B42296E00C3940E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799806BB1B42296E00C3940E /* Crashlytics.framework */; };
+		79A1B1BA1B5493EF00DCF047 /* SobreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A1B1B91B5493EF00DCF047 /* SobreViewController.m */; };
 		79A37C731B35FCA80024AB42 /* SimulacaoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79A37C721B35FCA80024AB42 /* SimulacaoCell.xib */; };
 		79A37C761B35FCD30024AB42 /* SimulacaoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A37C751B35FCD30024AB42 /* SimulacaoCell.m */; };
 		79A37C791B3602180024AB42 /* Simulacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A37C781B3602180024AB42 /* Simulacao.m */; };
@@ -69,6 +70,8 @@
 		798967A61B2D1964003DC09A /* PerfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfilViewController.m; sourceTree = "<group>"; };
 		799806BA1B42296E00C3940E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		799806BB1B42296E00C3940E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		79A1B1B81B5493EF00DCF047 /* SobreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SobreViewController.h; sourceTree = "<group>"; };
+		79A1B1B91B5493EF00DCF047 /* SobreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SobreViewController.m; sourceTree = "<group>"; };
 		79A37C721B35FCA80024AB42 /* SimulacaoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimulacaoCell.xib; sourceTree = "<group>"; };
 		79A37C741B35FCD30024AB42 /* SimulacaoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimulacaoCell.h; sourceTree = "<group>"; };
 		79A37C751B35FCD30024AB42 /* SimulacaoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimulacaoCell.m; sourceTree = "<group>"; };
@@ -298,6 +301,8 @@
 				798967A31B2CFA15003DC09A /* BaseViewController.m */,
 				798967A51B2D1964003DC09A /* PerfilViewController.h */,
 				798967A61B2D1964003DC09A /* PerfilViewController.m */,
+				79A1B1B81B5493EF00DCF047 /* SobreViewController.h */,
+				79A1B1B91B5493EF00DCF047 /* SobreViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				79D097D51AF6C79900DF870C /* JSONObjects.m in Sources */,
 				79D097E41AF6D75A00DF870C /* FormularioViewController.m in Sources */,
 				79D097A61AF6C4F300DF870C /* main.m in Sources */,
+				79A1B1BA1B5493EF00DCF047 /* SobreViewController.m in Sources */,
 				79D097DA1AF6C7A400DF870C /* Model.m in Sources */,
 				79D097AC1AF6C4F300DF870C /* Jinkings_Financiamento.xcdatamodeld in Sources */,
 				79A37C791B3602180024AB42 /* Simulacao.m in Sources */,
