@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0FF08BB1B9CC52F11A2B4FF9 /* libPods-Jinkings Soluciona.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B06B76ABE1AE9959BF8542 /* libPods-Jinkings Soluciona.a */; };
+		7916EAC21B5C83FA001045E5 /* TipoImovel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7916EAC11B5C83FA001045E5 /* TipoImovel.m */; };
+		7916EAC51B5C843B001045E5 /* CondicaoImovel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7916EAC41B5C843B001045E5 /* CondicaoImovel.m */; };
+		7916EAC81B5C8D21001045E5 /* StatusSimulacao.m in Sources */ = {isa = PBXBuildFile; fileRef = 7916EAC71B5C8D21001045E5 /* StatusSimulacao.m */; };
 		79409F7A1B23E630004A97AF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79409F791B23E630004A97AF /* AudioToolbox.framework */; };
 		79409F7C1B23E635004A97AF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79409F7B1B23E635004A97AF /* CFNetwork.framework */; };
 		79409F7E1B23E63B004A97AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79409F7D1B23E63A004A97AF /* CoreGraphics.framework */; };
@@ -50,6 +53,12 @@
 		3BFD1B5577A33DA8F3EB3170 /* libPods-Jinkings Financiamento.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jinkings Financiamento.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E20A16A44AC7DE27B44E146 /* Pods-Jinkings Financiamento.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jinkings Financiamento.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jinkings Financiamento/Pods-Jinkings Financiamento.release.xcconfig"; sourceTree = "<group>"; };
 		5E868D4882A22EB37C5D3AB9 /* Pods-Jinkings Financiamento.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jinkings Financiamento.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jinkings Financiamento/Pods-Jinkings Financiamento.debug.xcconfig"; sourceTree = "<group>"; };
+		7916EAC01B5C83FA001045E5 /* TipoImovel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipoImovel.h; sourceTree = "<group>"; };
+		7916EAC11B5C83FA001045E5 /* TipoImovel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipoImovel.m; sourceTree = "<group>"; };
+		7916EAC31B5C843B001045E5 /* CondicaoImovel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CondicaoImovel.h; sourceTree = "<group>"; };
+		7916EAC41B5C843B001045E5 /* CondicaoImovel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CondicaoImovel.m; sourceTree = "<group>"; };
+		7916EAC61B5C8D21001045E5 /* StatusSimulacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusSimulacao.h; sourceTree = "<group>"; };
+		7916EAC71B5C8D21001045E5 /* StatusSimulacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusSimulacao.m; sourceTree = "<group>"; };
 		79409F791B23E630004A97AF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		79409F7B1B23E635004A97AF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		79409F7D1B23E63A004A97AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -271,6 +280,12 @@
 				79D097D91AF6C7A400DF870C /* Model+JSONKit.m */,
 				79A37C771B3602180024AB42 /* Simulacao.h */,
 				79A37C781B3602180024AB42 /* Simulacao.m */,
+				7916EAC01B5C83FA001045E5 /* TipoImovel.h */,
+				7916EAC11B5C83FA001045E5 /* TipoImovel.m */,
+				7916EAC31B5C843B001045E5 /* CondicaoImovel.h */,
+				7916EAC41B5C843B001045E5 /* CondicaoImovel.m */,
+				7916EAC61B5C8D21001045E5 /* StatusSimulacao.h */,
+				7916EAC71B5C8D21001045E5 /* StatusSimulacao.m */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -434,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79A37C761B35FCD30024AB42 /* SimulacaoCell.m in Sources */,
+				7916EAC21B5C83FA001045E5 /* TipoImovel.m in Sources */,
 				798967A71B2D1964003DC09A /* PerfilViewController.m in Sources */,
 				79D097DE1AF6C86800DF870C /* LoginViewController.m in Sources */,
 				798967A41B2CFA15003DC09A /* BaseViewController.m in Sources */,
@@ -446,7 +462,9 @@
 				79A1B1BA1B5493EF00DCF047 /* SobreViewController.m in Sources */,
 				79D097DA1AF6C7A400DF870C /* Model.m in Sources */,
 				79D097AC1AF6C4F300DF870C /* Jinkings_Financiamento.xcdatamodeld in Sources */,
+				7916EAC81B5C8D21001045E5 /* StatusSimulacao.m in Sources */,
 				79A37C791B3602180024AB42 /* Simulacao.m in Sources */,
+				7916EAC51B5C843B001045E5 /* CondicaoImovel.m in Sources */,
 				79D097E11AF6C87800DF870C /* CadastroViewController.m in Sources */,
 				79D097D41AF6C79900DF870C /* AppHelper.m in Sources */,
 			);

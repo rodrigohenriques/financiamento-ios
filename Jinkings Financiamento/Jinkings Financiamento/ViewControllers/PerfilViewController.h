@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface PerfilViewController : UIViewController
+@interface PerfilViewController : BaseViewController
 
 @end

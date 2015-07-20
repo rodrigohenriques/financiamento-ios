@@ -11,10 +11,15 @@
 #import <TSMessages/TSMessage.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
+#import "TipoImovel.h"
+#import "CondicaoImovel.h"
+#import "StatusSimulacao.h"
+
 #define placeHolderColor [UIColor whiteColor]
 
 @interface LoginViewController ()
 
+@property (nonatomic, strong) UIWindow *window;
 @property (nonatomic, strong) NSDictionary *options;
 
 @end
@@ -33,14 +38,16 @@
     _edtSenha.backgroundColor = [UIColor clearColor];
     _edtSenha.floatingLabelActiveTextColor = [UIColor whiteColor];
     
+    [self setNeedsStatusBarAppearanceUpdate];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
     PFUser *user = [PFUser currentUser];
     
     if (user) {
         [self performSegueWithIdentifier:@"sgPrincipal" sender:nil];
     }
-    
-    [self setNeedsStatusBarAppearanceUpdate];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,20 +79,57 @@
     return YES;
 }
 
+-(void) getStatusObjects{
+    PFQuery *query = [PFQuery queryWithClassName:@"StatusSimulacao"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for (StatusSimulacao *statusSimulacao in objects) {
+                [statusSimulacao pinInBackground];
+            }
+        }
+    }];
+}
+
+-(void) getTipoImovelObjects{
+    PFQuery *query = [PFQuery queryWithClassName:@"TipoImovel"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for (TipoImovel *tipoImovel in objects) {
+                [tipoImovel pinInBackground];
+            }
+        }
+    }];
+}
+
+-(void) getCondicaoImovelObjects{
+    PFQuery *query = [PFQuery queryWithClassName:@"CondicaoImovel"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for (CondicaoImovel *condicaoImovel in objects) {
+                [condicaoImovel pinInBackground];
+            }
+        }
+    }];
+}
+
 - (IBAction)btnEntrarClick:(id)sender {
     
     if ([self validarCampos]) {
         
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.mode = MBProgressHUDModeAnnularDeterminate;
+        hud.mode = MBProgressHUDModeIndeterminate;
         hud.labelText = @"Entrando";
-
+        
         [hud show:YES];
         
         [PFUser logInWithUsernameInBackground:_edtEmail.text password:_edtSenha.text
                                         block:^(PFUser *user, NSError *error) {
                                             [hud hide:YES];
                                             if (user) {
+                                                [self getTipoImovelObjects];
+                                                [self getCondicaoImovelObjects];
+                                                [self getStatusObjects];
+                                                
                                                 [self performSegueWithIdentifier:@"sgPrincipal" sender:nil];
                                             } else {
                                                 [self exibeMensagem:@"Usuário ou senha inválido(a)"];

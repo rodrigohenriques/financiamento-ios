@@ -10,4 +10,8 @@
 
 @implementation SobreViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tabBarController setTitle:@"Sobre"];
+}
+
 @end

@@ -12,6 +12,9 @@
 #import <RPFloatingPlaceholders/RPFloatingPlaceholderTextField.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <TSMessages/TSMessage.h>
+#import "TipoImovel.h"
+#import "CondicaoImovel.h"
+#import "StatusSimulacao.h"
 
 @interface FormularioViewController ()
 
@@ -43,12 +46,20 @@
 @property (nonatomic, strong) UIActionSheet *actionSheetECorrentista;
 @property (nonatomic, strong) UIActionSheet *actionSheetCondicaoImovel;
 
+@property (nonatomic, strong) NSMutableArray *arrayTipoImovel;
+@property (nonatomic, strong) NSMutableArray *arrayCondicaoImovel;
+@property (nonatomic, strong) NSMutableArray *arrayStatus;
+
 @end
 
 @implementation FormularioViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.arrayTipoImovel = [self getObjectsFromLocalDataStoreClass:@"TipoImovel"];
+    self.arrayCondicaoImovel = [self getObjectsFromLocalDataStoreClass:@"CondicaoImovel"];
+    self.arrayStatus = [self getObjectsFromLocalDataStoreClass:@"StatusSimulacao"];
     
     [_scrollView setContentSize:CGSizeMake(self.view.bounds.size.width, 1270)];
     
@@ -62,13 +73,22 @@
     
     _actionSheetPossuiFinanciamento = [[UIActionSheet alloc] initWithTitle:@"Possui financiamento imobiliário?" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Sim", @"Não", nil];
     
-    _actionSheetTipoImovel = [[UIActionSheet alloc] initWithTitle:@"Tipo do imóvel" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Comercial", @"Residencial", nil];
+    _actionSheetTipoImovel = [[UIActionSheet alloc] initWithTitle:@"Tipo do imóvel" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:nil];
     
-    _actionSheetCondicaoImovel = [[UIActionSheet alloc] initWithTitle:@"Condição do imóvel" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Novo", @"Usado", @"Em construção", nil];
+    _actionSheetCondicaoImovel = [[UIActionSheet alloc] initWithTitle:@"Condição do imóvel" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:nil];
     
-    self.navigationItem.title = @"Simulação";
+    for (TipoImovel *tipoImovel in self.arrayTipoImovel) {
+        [_actionSheetTipoImovel addButtonWithTitle:tipoImovel[@"descricao"]];
+    }
     
-    // Do any additional setup after loading the view.
+    for (CondicaoImovel *condicaoImovel in self.arrayTipoImovel) {
+        [_actionSheetTipoImovel addButtonWithTitle:condicaoImovel[@"descricao"]];
+    }
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tabBarController setTitle:@"Nova Simulação"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,7 +101,7 @@
         [_edtCep resignFirstResponder];
         
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.mode = MBProgressHUDModeAnnularDeterminate;
+        hud.mode = MBProgressHUDModeIndeterminate;
         hud.labelText = @"Consultando";
         
         NSString *strUrlCep = [NSString stringWithFormat:@"http://cep.correiocontrol.com.br/%@.json", [[_edtCep.text stringByReplacingOccurrencesOfString:@"." withString:@""] stringByReplacingOccurrencesOfString:@"-" withString:@""]];
@@ -244,6 +264,19 @@
     _edtAgencia.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Agência" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1]}];
     
     _edtConta.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Conta" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1]}];
+}
+
+-(NSMutableArray*) getObjectsFromLocalDataStoreClass:(NSString*) class{
+    NSMutableArray *retorno = [NSMutableArray new];
+    PFQuery *query = [PFQuery queryWithClassName:class];
+    [query fromLocalDatastore];
+    [query findObjectsInBackgroundWithBlock:^(NSArray* objects, NSError* error){
+        if (!error) {
+            [retorno addObjectsFromArray:objects];
+        }
+    }];
+    
+    return retorno;
 }
 
 - (IBAction)actionSheetECorrentista:(id)sender {
@@ -483,6 +516,36 @@
                                     type:TSMessageNotificationTypeError];
 }
 
+-(StatusSimulacao*) getStatusSimulacaoWithOrder:(NSString*) order{
+    for (StatusSimulacao *statusSimulacao in self.arrayStatus) {
+        if ([statusSimulacao[@"ordem"] isEqualToString:order]) {
+            return statusSimulacao;
+        }
+    }
+    
+    return nil;
+}
+
+-(TipoImovel*) getTipoImovelWithDescription:(NSString*) description{
+    for (TipoImovel *tipoImovel in self.arrayTipoImovel) {
+        if ([tipoImovel[@"descricao"] isEqualToString:description]) {
+            return tipoImovel;
+        }
+    }
+    
+    return nil;
+}
+
+-(CondicaoImovel*) getCondicaoImovelWithDescription:(NSString*) description{
+    for (CondicaoImovel *condicaoImovel in self.arrayCondicaoImovel) {
+        if ([condicaoImovel[@"descricao"] isEqualToString:description]) {
+            return condicaoImovel;
+        }
+    }
+    
+    return nil;
+}
+
 - (IBAction)btnEnviarClick:(id)sender {
     
     if (![self validarCampos]) {
@@ -490,7 +553,7 @@
     }
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeDeterminate;
+    hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Enviando";
     
     [hud show:YES];
@@ -504,9 +567,10 @@
     simulacao[@"logradouro"] = _edtLogradouro.text;
     simulacao[@"uf"] = _edtUF.text;
     simulacao[@"municipio"] = _edtMunicipio.text;
-    simulacao[@"tipoImovel"] = _edtTipoImovel.text;
-    simulacao[@"condicaoImovel"] = _edtCondicaoImovel.text;
     simulacao[@"valorImovel"] = _edtValorImovel.text;
+    
+    simulacao[@"tipoImovel"] = [self getTipoImovelWithDescription:_edtTipoImovel.text];
+    simulacao[@"condicaoImovel"] = [self getCondicaoImovelWithDescription:_edtCondicaoImovel.text];
     
     simulacao[@"possuiFinanciamento"] = [_edtPossuiFinanciamento.text isEqualToString:@"Sim"] ? [NSNumber numberWithBool:YES] : [NSNumber numberWithBool:NO];
     
@@ -527,7 +591,7 @@
     
     simulacao[@"user"] = user;
     
-    simulacao[@"status"] = @"Em análise";
+    simulacao[@"Status"] = [self getStatusSimulacaoWithOrder:@"1"];
     
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateFormat:@"dd/MM/yyyy"];
@@ -536,7 +600,7 @@
     
     [simulacao saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            [[[UIAlertView alloc] initWithTitle:@"Sucesso" message:@"Sua simulação de financiamento foi enviada com sucesso. Nossa equipe entrará em contato com você para informar os próximos passos. Obrigado por escolher a Soluciona!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+            [[[UIAlertView alloc] initWithTitle:@"Sucesso" message:@"Sua simulação de financiamento foi enviada com sucesso. Aguarde nosso contato em até 48 horas." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
             [self limparCampos];
         } else {
             [self exibeMensagem:@"Não foi possível enviar a sua simulação. Por favor, tente novamente mais tarde."];

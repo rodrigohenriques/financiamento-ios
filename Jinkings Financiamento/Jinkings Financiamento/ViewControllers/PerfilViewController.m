@@ -32,4 +32,8 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tabBarController setTitle:@"Perfil"];
+}
+
 @end

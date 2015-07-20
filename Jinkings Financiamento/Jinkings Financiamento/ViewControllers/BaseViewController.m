@@ -7,6 +7,8 @@
 //
 
 #import "BaseViewController.h"
+#import <Parse/Parse.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface BaseViewController ()
 
@@ -17,10 +19,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIBarButtonItem *btnTeste = [[UIBarButtonItem alloc] initWithTitle:@"Sair" style:UIBarButtonItemStyleDone target:self action:@selector(logoff)];
+    
+    self.tabBarController.navigationItem.leftBarButtonItem = btnTeste;
+    
     [self setNeedsStatusBarAppearanceUpdate];
     [self.navigationController setNavigationBarHidden:NO];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+}
+
+-(void) logoff{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Saindo";
     
+    [hud show:YES];
+    
+    [PFUser logOutInBackgroundWithBlock:^(NSError *error) {
+        [hud hide:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

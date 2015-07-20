@@ -158,7 +158,7 @@
 - (IBAction)btnConfirmarClick:(id)sender {
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Efetuando cadastro";
     
     [hud show:YES];
@@ -190,7 +190,10 @@
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    [self.navigationController popViewControllerAnimated:YES];
+    [PFUser logInWithUsernameInBackground:_edtEmail.text password:_edtSenha.text
+                                    block:^(PFUser *user, NSError *error) {
+                                        [self.navigationController popViewControllerAnimated:YES];
+                                    }];
 }
 
 - (IBAction)btnCategoriaProfissionalClick:(id)sender {
@@ -205,6 +208,70 @@
             _edtCategoriaProfissional.text = [actionSheet buttonTitleAtIndex:buttonIndex];
         }
     }
+}
+
+#pragma mark - UITextFieldDelegate
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    
+    if ([string isEqualToString:@""]) {
+        return YES;
+    }
+    
+    if ([textField isEqual:_edtCelular]) {
+        
+        if (textField.text.length >= 14) {
+            return NO;
+        }
+        
+        if (textField.text.length == 0) {
+            textField.text = [NSString stringWithFormat:@"(%@",textField.text];
+        }
+        
+        if (textField.text.length == 3) {
+            textField.text = [NSString stringWithFormat:@"%@)",textField.text];
+        }
+        
+        if (textField.text.length == 9) {
+            textField.text = [NSString stringWithFormat:@"%@-",textField.text];
+        }
+    }
+    
+    if ([textField isEqual:_edtTelefone]) {
+        
+        if (textField.text.length >= 13) {
+            return NO;
+        }
+        
+        if (textField.text.length == 0) {
+            textField.text = [NSString stringWithFormat:@"(%@",textField.text];
+        }
+        
+        if (textField.text.length == 3) {
+            textField.text = [NSString stringWithFormat:@"%@)",textField.text];
+        }
+        
+        if (textField.text.length == 8) {
+            textField.text = [NSString stringWithFormat:@"%@-",textField.text];
+        }
+    }
+    
+    if ([textField isEqual:_edtCPF]) {
+        
+        if (textField.text.length >= 14) {
+            return NO;
+        }
+        
+        if (textField.text.length == 3 || textField.text.length == 7) {
+            textField.text = [NSString stringWithFormat:@"%@.",textField.text];
+        }
+        
+        if (textField.text.length == 11) {
+            textField.text = [NSString stringWithFormat:@"%@-",textField.text];
+        }
+    }
+    
+    return YES;
 }
 
 @end

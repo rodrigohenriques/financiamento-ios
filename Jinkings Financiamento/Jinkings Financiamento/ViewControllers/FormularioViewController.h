@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface FormularioViewController : UIViewController<UITextFieldDelegate, UIActionSheetDelegate>
+@interface FormularioViewController : BaseViewController<UITextFieldDelegate, UIActionSheetDelegate>
 
 @end

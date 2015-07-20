@@ -12,6 +12,10 @@
 #import "Simulacao.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 
+#import "TipoImovel.h"
+#import "CondicaoImovel.h"
+#import "StatusSimulacao.h"
+
 @interface EnviadosViewController ()
 
 @property (nonatomic, strong) NSMutableArray *simulacoes;
@@ -25,7 +29,7 @@
     [super viewDidLoad];
 
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Carregando...";
     
     [hud show:YES];
@@ -55,6 +59,10 @@
     }];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tabBarController setTitle:@"Enviadas"];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -73,24 +81,27 @@
     
     Simulacao *simulacao = [self.simulacoes objectAtIndex:indexPath.row];
     
+    TipoImovel *tipoImovel = simulacao[@"tipoImovel"];
+    CondicaoImovel *condicaoImovel = simulacao[@"condicaoImovel"];
+    
     cell.lblTitle.text = [NSString stringWithFormat:@"R$%@ - %@", simulacao[@"valorFinanciamento"], simulacao[@"dataEnvio"]];
-    cell.lblImovel.text = [NSString stringWithFormat:@"%@ - %@", simulacao[@"tipoImovel"], simulacao[@"logradouro"]];
+    cell.lblImovel.text = [NSString stringWithFormat:@"%@ %@ - %@", tipoImovel[@"descricao"], condicaoImovel[@"descricao"], simulacao[@"logradouro"]];
 
-    NSString *status = simulacao[@"status"];
+    StatusSimulacao *status = simulacao[@"Status"];
     
-    if ([status isEqualToString:@"Em análise"]) {
-        [cell.lblStatus setTextColor:[UIColor colorWithRed:0.882 green:0.773 blue:0.067 alpha:1]];
-    } else if ([status isEqualToString:@"Cancelada"]){
-        [cell.lblStatus setTextColor:[UIColor redColor]];
-    } else if ([status isEqualToString:@"Aprovada"]){
-        [cell.lblStatus setTextColor:[UIColor colorWithRed:0.302 green:0.851 blue:0.063 alpha:1]];
-    } else if ([status isEqualToString:@"Aguardando documentação"]){
-        [cell.lblStatus setTextColor:[UIColor colorWithRed:0.106 green:0.243 blue:0.576 alpha:1]];
-    }
+    [cell.lblStatus setTextColor:[self colorFromHexString:status[@"hexCor"]]];
     
-    cell.lblStatus.text = status;
+    cell.lblStatus.text = status[@"descricao"];
 
     return cell;
+}
+
+-(UIColor *)colorFromHexString:(NSString *)hexString {
+    unsigned rgbValue = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:hexString];
+    [scanner setScanLocation:1]; // bypass '#' character
+    [scanner scanHexInt:&rgbValue];
+    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
