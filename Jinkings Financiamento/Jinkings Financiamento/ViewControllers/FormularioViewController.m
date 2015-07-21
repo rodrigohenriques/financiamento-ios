@@ -57,6 +57,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Aguarde...";
+    
     self.arrayTipoImovel = [self getObjectsFromLocalDataStoreClass:@"TipoImovel"];
     self.arrayCondicaoImovel = [self getObjectsFromLocalDataStoreClass:@"CondicaoImovel"];
     self.arrayStatus = [self getObjectsFromLocalDataStoreClass:@"StatusSimulacao"];
@@ -81,10 +85,11 @@
         [_actionSheetTipoImovel addButtonWithTitle:tipoImovel[@"descricao"]];
     }
     
-    for (CondicaoImovel *condicaoImovel in self.arrayTipoImovel) {
-        [_actionSheetTipoImovel addButtonWithTitle:condicaoImovel[@"descricao"]];
+    for (CondicaoImovel *condicaoImovel in self.arrayCondicaoImovel) {
+        [_actionSheetCondicaoImovel addButtonWithTitle:condicaoImovel[@"descricao"]];
     }
     
+    [hud hide:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -270,11 +275,8 @@
     NSMutableArray *retorno = [NSMutableArray new];
     PFQuery *query = [PFQuery queryWithClassName:class];
     [query fromLocalDatastore];
-    [query findObjectsInBackgroundWithBlock:^(NSArray* objects, NSError* error){
-        if (!error) {
-            [retorno addObjectsFromArray:objects];
-        }
-    }];
+    
+    [retorno addObjectsFromArray:[query findObjects]];
     
     return retorno;
 }
@@ -426,21 +428,6 @@
 }
 
 -(BOOL) validarCampos{
-    
-    if (_edtCep.text.length <= 0) {
-        [self exibeMensagem:@"Preencha o campo CEP"];
-        return NO;
-    }
-    
-    if (_edtBairro.text.length <= 0) {
-        [self exibeMensagem:@"Preencha o campo BAIRRO"];
-        return NO;
-    }
-    
-    if (_edtLogradouro.text.length <= 0) {
-        [self exibeMensagem:@"Preencha o campo LOGRADOURO"];
-        return NO;
-    }
     
     if (_edtUF.text.length <= 0) {
         [self exibeMensagem:@"Preencha o campo UF"];

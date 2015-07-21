@@ -27,39 +27,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.simulacoes = [NSMutableArray new];
+    
+    _tabela.delegate = self;
+    _tabela.dataSource = self;
 
+}
+
+-(void)viewWillAppear:(BOOL)animated{
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Carregando...";
     
     [hud show:YES];
     
-    self.simulacoes = [NSMutableArray new];
-    
-    _tabela.delegate = self;
-    _tabela.dataSource = self;
+    [self.simulacoes removeAllObjects];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Simulacao"];
     [query whereKey:@"user" equalTo:[PFUser currentUser]];
     
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            
-            for (Simulacao *simulacao in objects) {
-                [self.simulacoes addObject:simulacao];
-            }
-            
-            [_tabela reloadData];
-            
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-        
-        [hud hide:YES];
-    }];
-}
-
--(void)viewWillAppear:(BOOL)animated{
+    [self.simulacoes addObjectsFromArray:[query findObjects]];
+    
+    [self.tabela reloadData];
+    
+    [hud hide:YES];
+    
     [self.tabBarController setTitle:@"Enviadas"];
 }
 

@@ -79,37 +79,37 @@
     return YES;
 }
 
--(void) getStatusObjects{
+-(BOOL) getStatusObjects{
+    BOOL retorno = NO;
     PFQuery *query = [PFQuery queryWithClassName:@"StatusSimulacao"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            for (StatusSimulacao *statusSimulacao in objects) {
-                [statusSimulacao pinInBackground];
-            }
-        }
-    }];
+    NSArray *arrayStatus = [query findObjects];
+    for (StatusSimulacao *status in arrayStatus) {
+        retorno = [status pin];
+    }
+    
+    return retorno;
 }
 
--(void) getTipoImovelObjects{
+-(BOOL) getTipoImovelObjects{
+    BOOL retorno = NO;
     PFQuery *query = [PFQuery queryWithClassName:@"TipoImovel"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            for (TipoImovel *tipoImovel in objects) {
-                [tipoImovel pinInBackground];
-            }
-        }
-    }];
+    NSArray *arrayTipos = [query findObjects];
+    for (TipoImovel *tipo in arrayTipos) {
+        retorno = [tipo pin];
+    }
+    
+    return retorno;
 }
 
--(void) getCondicaoImovelObjects{
+-(BOOL) getCondicaoImovelObjects{
+    BOOL retorno = NO;
     PFQuery *query = [PFQuery queryWithClassName:@"CondicaoImovel"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            for (CondicaoImovel *condicaoImovel in objects) {
-                [condicaoImovel pinInBackground];
-            }
-        }
-    }];
+    NSArray *arrayCondicao = [query findObjects];
+    for (CondicaoImovel *condicao in arrayCondicao) {
+        retorno = [condicao pin];
+    }
+    
+    return retorno;
 }
 
 - (IBAction)btnEntrarClick:(id)sender {
@@ -124,16 +124,16 @@
         
         [PFUser logInWithUsernameInBackground:_edtEmail.text password:_edtSenha.text
                                         block:^(PFUser *user, NSError *error) {
-                                            [hud hide:YES];
                                             if (user) {
-                                                [self getTipoImovelObjects];
-                                                [self getCondicaoImovelObjects];
-                                                [self getStatusObjects];
-                                                
-                                                [self performSegueWithIdentifier:@"sgPrincipal" sender:nil];
+                                                if ([self getCondicaoImovelObjects] && [self getTipoImovelObjects] && [self getStatusObjects]) {
+                                                    [self performSegueWithIdentifier:@"sgPrincipal" sender:nil];
+                                                } else {
+                                                    [self exibeMensagem:@"Falha ao carregar dados de login"];
+                                                }
                                             } else {
                                                 [self exibeMensagem:@"Usuário ou senha inválido(a)"];
                                             }
+                                            [hud hide:YES];
                                         }];
     }
 }

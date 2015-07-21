@@ -10,6 +10,10 @@
 #import <Parse/Parse.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
+#import "TipoImovel.h"
+#import "CondicaoImovel.h"
+#import "StatusSimulacao.h"
+
 @interface BaseViewController ()
 
 @end
@@ -36,9 +40,38 @@
     [hud show:YES];
     
     [PFUser logOutInBackgroundWithBlock:^(NSError *error) {
-        [hud hide:YES];
+        [self deleteLocalDataStore];
         [self.navigationController popToRootViewControllerAnimated:YES];
+        [hud hide:YES];
     }];
+}
+
+-(NSMutableArray*) getObjectsFromLocalDataStoreClass:(NSString*) class{
+    NSMutableArray *retorno = [NSMutableArray new];
+    PFQuery *query = [PFQuery queryWithClassName:class];
+    [query fromLocalDatastore];
+    
+    [retorno addObjectsFromArray:[query findObjects]];
+    
+    return retorno;
+}
+
+-(void) deleteLocalDataStore{
+    NSMutableArray *tipoImovel = [self getObjectsFromLocalDataStoreClass:@"TipoImovel"];
+    NSMutableArray *condicaoImovel = [self getObjectsFromLocalDataStoreClass:@"CondicaoImovel"];
+    NSMutableArray *statusSimulacao = [self getObjectsFromLocalDataStoreClass:@"StatusSimulacao"];
+    
+    for (TipoImovel *tipo in tipoImovel) {
+        [tipo unpin];
+    }
+    
+    for (CondicaoImovel *condicao in condicaoImovel) {
+        [condicao unpin];
+    }
+    
+    for (StatusSimulacao *status in statusSimulacao) {
+        [status unpin];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
