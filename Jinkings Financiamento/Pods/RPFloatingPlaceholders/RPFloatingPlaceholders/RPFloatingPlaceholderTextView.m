@@ -140,6 +140,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textViewTextDidChange:)
                                                  name:UITextViewTextDidChangeNotification object:self];
     
+    // Forces drawRect to be called when the bounds change
+    self.contentMode = UIViewContentModeRedraw;
+
     // Set the default animation direction
     self.animationDirection = RPFloatingPlaceholderAnimateUpward;
     
@@ -178,8 +181,8 @@
         // iOS 6
         defaultActiveColor = [UIColor blueColor];
     }
-    self.floatingLabelActiveTextColor = defaultActiveColor;
-    self.floatingLabelInactiveTextColor = [UIColor colorWithWhite:0.7f alpha:1.f];
+    self.floatingLabelActiveTextColor = self.floatingLabelActiveTextColor ?: defaultActiveColor;
+    self.floatingLabelInactiveTextColor = self.floatingLabelInactiveTextColor ?: [UIColor colorWithWhite:0.7f alpha:1.f];
     
     self.floatingLabel.textColor = self.floatingLabelActiveTextColor;
 }
@@ -222,11 +225,22 @@
     }
 }
 
+- (void)didMoveToSuperview
+{
+    if (self.floatingLabel.superview != self.superview) {
+        if (self.superview && self.hasText) {
+            [self.superview addSubview:self.floatingLabel];
+        } else {
+            [self.floatingLabel removeFromSuperview];
+        }
+    }
+}
+
 - (void)showFloatingLabelWithAnimation:(BOOL)isAnimated
 {
     // Add it to the superview so that the floating label does not
     // scroll with the text view contents
-    if (!self.floatingLabel.superview) {
+    if (self.floatingLabel.superview != self.superview) {
         [self.superview addSubview:self.floatingLabel];
     }
     
@@ -283,7 +297,7 @@
 {
     [self.floatingLabel sizeToFit];
     
-    CGFloat offset = self.floatingLabel.font.lineHeight;
+    CGFloat offset = ceil(self.floatingLabel.font.lineHeight);
     
     self.originalFloatingLabelFrame = CGRectMake(self.originalTextViewFrame.origin.x + 5.f, self.originalTextViewFrame.origin.y,
                                                  self.originalTextViewFrame.size.width - 10.f, self.floatingLabel.frame.size.height);

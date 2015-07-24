@@ -69,8 +69,8 @@
 // RPFloatingPlaceholders
 #define COCOAPODS_POD_AVAILABLE_RPFloatingPlaceholders
 #define COCOAPODS_VERSION_MAJOR_RPFloatingPlaceholders 0
-#define COCOAPODS_VERSION_MINOR_RPFloatingPlaceholders 2
-#define COCOAPODS_VERSION_PATCH_RPFloatingPlaceholders 6
+#define COCOAPODS_VERSION_MINOR_RPFloatingPlaceholders 3
+#define COCOAPODS_VERSION_PATCH_RPFloatingPlaceholders 0
 
 // TSMessages
 #define COCOAPODS_POD_AVAILABLE_TSMessages

@@ -25,6 +25,8 @@
 		79409F941B23E72C004A97AF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79409F911B23E67E004A97AF /* Social.framework */; };
 		79409F961B23E78A004A97AF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79409F951B23E78A004A97AF /* Parse.framework */; };
 		79409F981B23E800004A97AF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79409F971B23E800004A97AF /* Bolts.framework */; };
+		796C79E91B61D5DA005E3B64 /* DetalheSimulacaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 796C79E81B61D5DA005E3B64 /* DetalheSimulacaoViewController.m */; };
+		796C79EC1B61DDC0005E3B64 /* DocumentoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 796C79EB1B61DDC0005E3B64 /* DocumentoCell.m */; };
 		798967A41B2CFA15003DC09A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798967A31B2CFA15003DC09A /* BaseViewController.m */; };
 		798967A71B2D1964003DC09A /* PerfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798967A61B2D1964003DC09A /* PerfilViewController.m */; };
 		799806BC1B42296E00C3940E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799806BA1B42296E00C3940E /* Fabric.framework */; };
@@ -73,6 +75,10 @@
 		79409F911B23E67E004A97AF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		79409F951B23E78A004A97AF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.7.4/Parse.framework"; sourceTree = "<group>"; };
 		79409F971B23E800004A97AF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.7.4/Bolts.framework"; sourceTree = "<group>"; };
+		796C79E71B61D5DA005E3B64 /* DetalheSimulacaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetalheSimulacaoViewController.h; sourceTree = "<group>"; };
+		796C79E81B61D5DA005E3B64 /* DetalheSimulacaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalheSimulacaoViewController.m; sourceTree = "<group>"; };
+		796C79EA1B61DDC0005E3B64 /* DocumentoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentoCell.h; sourceTree = "<group>"; };
+		796C79EB1B61DDC0005E3B64 /* DocumentoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentoCell.m; sourceTree = "<group>"; };
 		798967A21B2CFA15003DC09A /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		798967A31B2CFA15003DC09A /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		798967A51B2D1964003DC09A /* PerfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerfilViewController.h; sourceTree = "<group>"; };
@@ -195,6 +201,8 @@
 				79A37C721B35FCA80024AB42 /* SimulacaoCell.xib */,
 				79A37C741B35FCD30024AB42 /* SimulacaoCell.h */,
 				79A37C751B35FCD30024AB42 /* SimulacaoCell.m */,
+				796C79EA1B61DDC0005E3B64 /* DocumentoCell.h */,
+				796C79EB1B61DDC0005E3B64 /* DocumentoCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -318,6 +326,8 @@
 				798967A61B2D1964003DC09A /* PerfilViewController.m */,
 				79A1B1B81B5493EF00DCF047 /* SobreViewController.h */,
 				79A1B1B91B5493EF00DCF047 /* SobreViewController.m */,
+				796C79E71B61D5DA005E3B64 /* DetalheSimulacaoViewController.h */,
+				796C79E81B61D5DA005E3B64 /* DetalheSimulacaoViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -463,9 +473,11 @@
 				79D097DA1AF6C7A400DF870C /* Model.m in Sources */,
 				79D097AC1AF6C4F300DF870C /* Jinkings_Financiamento.xcdatamodeld in Sources */,
 				7916EAC81B5C8D21001045E5 /* StatusSimulacao.m in Sources */,
+				796C79EC1B61DDC0005E3B64 /* DocumentoCell.m in Sources */,
 				79A37C791B3602180024AB42 /* Simulacao.m in Sources */,
 				7916EAC51B5C843B001045E5 /* CondicaoImovel.m in Sources */,
 				79D097E11AF6C87800DF870C /* CadastroViewController.m in Sources */,
+				796C79E91B61D5DA005E3B64 /* DetalheSimulacaoViewController.m in Sources */,
 				79D097D41AF6C79900DF870C /* AppHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

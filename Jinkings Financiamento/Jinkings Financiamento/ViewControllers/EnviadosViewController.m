@@ -11,6 +11,7 @@
 #import "SimulacaoCell.h"
 #import "Simulacao.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "DetalheSimulacaoViewController.h"
 
 #import "TipoImovel.h"
 #import "CondicaoImovel.h"
@@ -36,6 +37,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [self.tabBarController setTitle:@"Enviadas"];
+    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     hud.labelText = @"Carregando...";
@@ -47,13 +50,17 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Simulacao"];
     [query whereKey:@"user" equalTo:[PFUser currentUser]];
     
-    [self.simulacoes addObjectsFromArray:[query findObjects]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error){
+        [self.simulacoes addObjectsFromArray:objects];
+        [self.tabela reloadData];
+        [hud hide:YES];
+    }];
     
-    [self.tabela reloadData];
-    
-    [hud hide:YES];
-    
-    [self.tabBarController setTitle:@"Enviadas"];
+//    [self.simulacoes addObjectsFromArray:[query findObjects]];
+//    
+//    [self.tabela reloadData];
+//    
+//    [hud hide:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,12 +96,21 @@
     return cell;
 }
 
--(UIColor *)colorFromHexString:(NSString *)hexString {
-    unsigned rgbValue = 0;
-    NSScanner *scanner = [NSScanner scannerWithString:hexString];
-    [scanner setScanLocation:1]; // bypass '#' character
-    [scanner scanHexInt:&rgbValue];
-    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Simulacao *simulacao = [self.simulacoes objectAtIndex:indexPath.row];
+    StatusSimulacao *status = simulacao[@"Status"];
+    
+    if ([status[@"descricao"] isEqualToString:@"Aguardando Documentação"]) {
+        [self performSegueWithIdentifier:@"sgDetalheSimulacao" sender:simulacao];
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"sgDetalheSimulacao"]) {
+        DetalheSimulacaoViewController *detalheVC = (DetalheSimulacaoViewController*) segue.destinationViewController;
+        
+        detalheVC.simulacao = (Simulacao*) sender;
+    }
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -103,6 +119,14 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.simulacoes count];
+}
+
+-(UIColor *)colorFromHexString:(NSString *)hexString {
+    unsigned rgbValue = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:hexString];
+    [scanner setScanLocation:1]; // bypass '#' character
+    [scanner scanHexInt:&rgbValue];
+    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
 }
 
 @end

@@ -23,9 +23,9 @@ PODS:
   - HexColors (2.2.1)
   - IQKeyboardManager (3.2.4)
   - MBProgressHUD (0.9.1)
-  - RPFloatingPlaceholders (0.2.6)
+  - RPFloatingPlaceholders (0.3.0)
   - TSMessages (0.9.12):
-    - HexColors
+    - HexColors (~> 2.2.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -39,7 +39,7 @@ SPEC CHECKSUMS:
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
   IQKeyboardManager: 555b1231fefafb21b19278d7cca72986a27b748b
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
-  RPFloatingPlaceholders: 9a4d31f43097a3f2577b0209303a3a39d65a91c3
-  TSMessages: 2a52642128d7ab15b46930c810b9c9403a2b58f3
+  RPFloatingPlaceholders: 706b576a5bd2e9b50d4aee6f6dcd3aa653fad9be
+  TSMessages: c8cc7b80f2a833af533872cd02010cac061532cc
 
 COCOAPODS: 0.36.3

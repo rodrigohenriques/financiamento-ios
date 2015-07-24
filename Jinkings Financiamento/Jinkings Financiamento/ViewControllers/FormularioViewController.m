@@ -578,7 +578,7 @@
     
     simulacao[@"user"] = user;
     
-    simulacao[@"Status"] = [self getStatusSimulacaoWithOrder:@"1"];
+    simulacao[@"Status"] = [self getStatusSimulacaoWithOrder:@"2"];
     
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateFormat:@"dd/MM/yyyy"];
