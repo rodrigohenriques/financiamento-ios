@@ -8,6 +8,7 @@
 
 #import "PerfilViewController.h"
 #import <Parse/Parse.h>
+#import "CategoriaProfissional.h"
 
 @interface PerfilViewController ()
 
@@ -24,11 +25,12 @@
     [super viewDidLoad];
     
     PFObject *user = [PFUser currentUser];
+    CategoriaProfissional *categoria = user[@"categoriaProfissional"];
     
     _lblNome.text = user[@"nome"];
     _lblCelular.text = user[@"celular"];
     _lblEmail.text = user[@"email"];
-    _lblCategoria.text = user[@"categoriaProfissional"];
+    _lblCategoria.text = categoria[@"nome"];
     
 }
 

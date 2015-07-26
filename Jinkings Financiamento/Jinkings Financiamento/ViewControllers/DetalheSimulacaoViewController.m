@@ -2,17 +2,21 @@
 //  DetalheSimulacaoViewController.m
 //  Jinkings Soluciona
 //
-//  Created by Guilherme Augusto on 23/07/15.
+//  Created by Guilherme Augusto on 25/07/15.
 //  Copyright (c) 2015 Jinkings. All rights reserved.
 //
 
 #import "DetalheSimulacaoViewController.h"
-#import "CategoriaProfissional.h"
+#import <Parse/Parse.h>
 #import "CategoriaDocumento.h"
+#import "DocumentoSimulacao.h"
+#import "CategoriaProfissional.h"
+#import "DocumentoCell.h"
 
 @interface DetalheSimulacaoViewController ()
 
-@property (strong, nonatomic) IBOutlet UICollectionView *tabela;
+@property (nonatomic, strong) NSMutableArray *documentos;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -20,7 +24,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSMutableArray *documentos = [self getCategoriaDocumentos];
+    
+    self.documentos = [self getCategoriaDocumentos];
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [self setTitle:@"Documentos"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,5 +59,30 @@
 //userPhoto[@"imageName"] = @"My trip to Hawaii!";
 //userPhoto[@"imageFile"] = imageFile;
 //[userPhoto saveInBackground];
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.documentos count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    DocumentoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DocumentoCell" forIndexPath:indexPath];
+    
+    CategoriaDocumento *documento = [self.documentos objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = documento[@"nome"];
+    cell.detailTextLabel.text = documento[@"descricao"];
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+}
 
 @end
