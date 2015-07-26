@@ -39,7 +39,6 @@
 		79D097A91AF6C4F300DF870C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D097A81AF6C4F300DF870C /* AppDelegate.m */; };
 		79D097AC1AF6C4F300DF870C /* Jinkings_Financiamento.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79D097AA1AF6C4F300DF870C /* Jinkings_Financiamento.xcdatamodeld */; };
 		79D097B21AF6C4F300DF870C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79D097B01AF6C4F300DF870C /* Main.storyboard */; };
-		79D097B41AF6C4F300DF870C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79D097B31AF6C4F300DF870C /* Images.xcassets */; };
 		79D097B71AF6C4F300DF870C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79D097B51AF6C4F300DF870C /* LaunchScreen.xib */; };
 		79D097D41AF6C79900DF870C /* AppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D097D11AF6C79900DF870C /* AppHelper.m */; };
 		79D097D51AF6C79900DF870C /* JSONObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D097D31AF6C79900DF870C /* JSONObjects.m */; };
@@ -49,6 +48,9 @@
 		79D097E11AF6C87800DF870C /* CadastroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D097E01AF6C87800DF870C /* CadastroViewController.m */; };
 		79D097E41AF6D75A00DF870C /* FormularioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D097E31AF6D75A00DF870C /* FormularioViewController.m */; };
 		79D097E71AF6D77400DF870C /* EnviadosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D097E61AF6D77400DF870C /* EnviadosViewController.m */; };
+		79D52D091B645BE300E557B4 /* CategoriaProfissional.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D52D081B645BE300E557B4 /* CategoriaProfissional.m */; };
+		79D52D0C1B64625800E557B4 /* CategoriaDocumento.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D52D0B1B64625800E557B4 /* CategoriaDocumento.m */; };
+		79D52D0E1B6466D600E557B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79D52D0D1B6466D600E557B4 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,7 +101,6 @@
 		79D097A81AF6C4F300DF870C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		79D097AB1AF6C4F300DF870C /* Jinkings_Financiamento.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Jinkings_Financiamento.xcdatamodel; sourceTree = "<group>"; };
 		79D097B11AF6C4F300DF870C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		79D097B31AF6C4F300DF870C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		79D097B61AF6C4F300DF870C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		79D097C11AF6C4F300DF870C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79D097C21AF6C4F300DF870C /* Jinkings_FinanciamentoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Jinkings_FinanciamentoTests.m; sourceTree = "<group>"; };
@@ -119,6 +120,11 @@
 		79D097E31AF6D75A00DF870C /* FormularioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormularioViewController.m; sourceTree = "<group>"; };
 		79D097E51AF6D77400DF870C /* EnviadosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnviadosViewController.h; sourceTree = "<group>"; };
 		79D097E61AF6D77400DF870C /* EnviadosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnviadosViewController.m; sourceTree = "<group>"; };
+		79D52D071B645BE300E557B4 /* CategoriaProfissional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriaProfissional.h; sourceTree = "<group>"; };
+		79D52D081B645BE300E557B4 /* CategoriaProfissional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriaProfissional.m; sourceTree = "<group>"; };
+		79D52D0A1B64625800E557B4 /* CategoriaDocumento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriaDocumento.h; sourceTree = "<group>"; };
+		79D52D0B1B64625800E557B4 /* CategoriaDocumento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriaDocumento.m; sourceTree = "<group>"; };
+		79D52D0D1B6466D600E557B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Jinkings Financiamento/Images.xcassets"; sourceTree = "<group>"; };
 		90B06B76ABE1AE9959BF8542 /* libPods-Jinkings Soluciona.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jinkings Soluciona.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD4A6F4C8C1494F993CBB1C /* Pods-Jinkings Soluciona.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jinkings Soluciona.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jinkings Soluciona/Pods-Jinkings Soluciona.debug.xcconfig"; sourceTree = "<group>"; };
 		D7E37ABC4D5E6793E15B9117 /* Pods-Jinkings Soluciona.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jinkings Soluciona.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jinkings Soluciona/Pods-Jinkings Soluciona.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +221,7 @@
 				79D097A11AF6C4F300DF870C /* Products */,
 				3F0027AC112F67148FE6D708 /* Pods */,
 				7535B697D8A2FD7FB96D6A84 /* Frameworks */,
+				79D52D0D1B6466D600E557B4 /* Images.xcassets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -238,7 +245,6 @@
 				79D097A71AF6C4F300DF870C /* AppDelegate.h */,
 				79D097A81AF6C4F300DF870C /* AppDelegate.m */,
 				79D097B01AF6C4F300DF870C /* Main.storyboard */,
-				79D097B31AF6C4F300DF870C /* Images.xcassets */,
 				79D097B51AF6C4F300DF870C /* LaunchScreen.xib */,
 				79D097AA1AF6C4F300DF870C /* Jinkings_Financiamento.xcdatamodeld */,
 				79D097A31AF6C4F300DF870C /* Supporting Files */,
@@ -294,6 +300,10 @@
 				7916EAC41B5C843B001045E5 /* CondicaoImovel.m */,
 				7916EAC61B5C8D21001045E5 /* StatusSimulacao.h */,
 				7916EAC71B5C8D21001045E5 /* StatusSimulacao.m */,
+				79D52D071B645BE300E557B4 /* CategoriaProfissional.h */,
+				79D52D081B645BE300E557B4 /* CategoriaProfissional.m */,
+				79D52D0A1B64625800E557B4 /* CategoriaDocumento.h */,
+				79D52D0B1B64625800E557B4 /* CategoriaDocumento.m */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -399,9 +409,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				79A37C731B35FCA80024AB42 /* SimulacaoCell.xib in Resources */,
+				79D52D0E1B6466D600E557B4 /* Images.xcassets in Resources */,
 				79D097B21AF6C4F300DF870C /* Main.storyboard in Resources */,
 				79D097B71AF6C4F300DF870C /* LaunchScreen.xib in Resources */,
-				79D097B41AF6C4F300DF870C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +470,7 @@
 			files = (
 				79A37C761B35FCD30024AB42 /* SimulacaoCell.m in Sources */,
 				7916EAC21B5C83FA001045E5 /* TipoImovel.m in Sources */,
+				79D52D0C1B64625800E557B4 /* CategoriaDocumento.m in Sources */,
 				798967A71B2D1964003DC09A /* PerfilViewController.m in Sources */,
 				79D097DE1AF6C86800DF870C /* LoginViewController.m in Sources */,
 				798967A41B2CFA15003DC09A /* BaseViewController.m in Sources */,
@@ -467,6 +478,7 @@
 				79D097DB1AF6C7A400DF870C /* Model+JSONKit.m in Sources */,
 				79D097A91AF6C4F300DF870C /* AppDelegate.m in Sources */,
 				79D097D51AF6C79900DF870C /* JSONObjects.m in Sources */,
+				79D52D091B645BE300E557B4 /* CategoriaProfissional.m in Sources */,
 				79D097E41AF6D75A00DF870C /* FormularioViewController.m in Sources */,
 				79D097A61AF6C4F300DF870C /* main.m in Sources */,
 				79A1B1BA1B5493EF00DCF047 /* SobreViewController.m in Sources */,

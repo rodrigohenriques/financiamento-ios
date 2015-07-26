@@ -10,11 +10,13 @@
 #import <Parse/Parse.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <TSMessages/TSMessage.h>
+#import "CategoriaProfissional.h"
 
 @interface CadastroViewController ()
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) UIActionSheet *actionSheetCategoria;
+@property (strong, nonatomic) NSMutableArray *categorias;
 
 @end
 
@@ -26,7 +28,7 @@
     
     [_scrollView setContentSize:CGSizeMake(_scrollView.bounds.size.width, 600)];
     
-    _actionSheetCategoria = [[UIActionSheet alloc] initWithTitle:@"Selecione sua categoria profissional" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Assalariado", @"Empresário", @"Autônomo", @"Profissional liberal", @"Aposentado ou pensionista", nil];
+    _actionSheetCategoria = [[UIActionSheet alloc] initWithTitle:@"Categoria profissional" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:nil];
     
     _edtNome.delegate = self;
     _edtNome.backgroundColor = [UIColor clearColor];
@@ -71,9 +73,60 @@
     _edtConfirmarSenha.floatingLabelInactiveTextColor = [UIColor colorWithRed:0.518 green:0.58 blue:0.651 alpha:1];
 }
 
+-(BOOL) getCategoriaProfissionalObjects{
+    BOOL retorno = NO;
+    PFQuery *query = [PFQuery queryWithClassName:@"CategoriaProfissional"];
+    NSArray *arrayCategoria = [query findObjects];
+    for (CategoriaProfissional *categoria in arrayCategoria) {
+        retorno = [categoria pin];
+    }
+    
+    return retorno;
+}
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:NO];
     [self setupFloatLabel];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"Carregando";
+    
+    [hud show:YES];
+    
+    if (![self getCategoriaProfissionalObjects]) {
+        [hud hide:YES];
+        [self exibeMensagem:@"Falha ao conectar ao servidor. Por favor, tente novamente mais tarde."];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+    self.categorias = [self getObjectsFromLocalDataStoreClass:@"CategoriaProfissional"];
+    
+    for (CategoriaProfissional *categoria in self.categorias) {
+        [_actionSheetCategoria addButtonWithTitle:categoria[@"nome"]];
+    }
+    
+    [hud hide:YES];
+}
+
+-(CategoriaProfissional*) getCategoriaWithDescription:(NSString*) description{
+    for (CategoriaProfissional *categoria in self.categorias) {
+        if ([categoria[@"nome"] isEqualToString:description]) {
+            return categoria;
+        }
+    }
+    
+    return nil;
+}
+
+-(NSMutableArray*) getObjectsFromLocalDataStoreClass:(NSString*) class{
+    NSMutableArray *retorno = [NSMutableArray new];
+    PFQuery *query = [PFQuery queryWithClassName:class];
+    [query fromLocalDatastore];
+    
+    [retorno addObjectsFromArray:[query findObjects]];
+    
+    return retorno;
 }
 
 -(void) setupFloatLabel{
@@ -175,7 +228,7 @@
         user[@"telefone"] = _edtTelefone.text;
         user[@"celular"]  = _edtCelular.text;
         user[@"cpf"] = _edtCPF.text;
-        user[@"categoriaProfissional"] = _edtCategoriaProfissional.text;
+        user[@"categoriaProfissional"] = [self getCategoriaWithDescription:_edtCategoriaProfissional.text];
         
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error) {   // Hooray! Let them use the app now.
@@ -185,7 +238,8 @@
             }
             [hud hide:YES];
         }];
-        
+    } else {
+        [hud hide:YES];
     }
 }
 

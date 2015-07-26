@@ -46,7 +46,9 @@
     PFUser *user = [PFUser currentUser];
     
     if (user) {
-        [self performSegueWithIdentifier:@"sgPrincipal" sender:nil];
+        if ([self getCondicaoImovelObjects] && [self getTipoImovelObjects] && [self getStatusObjects]) {
+            [self performSegueWithIdentifier:@"sgPrincipal" sender:nil];
+        }
     }
 }
 
