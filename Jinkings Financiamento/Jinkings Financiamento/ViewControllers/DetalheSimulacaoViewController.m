@@ -15,6 +15,7 @@
 
 @interface DetalheSimulacaoViewController ()
 
+@property (nonatomic, strong) UIActionSheet *actionSheetDocumento;
 @property (nonatomic, strong) NSMutableArray *documentos;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
@@ -24,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.actionSheetDocumento = [[UIActionSheet alloc] initWithTitle:@"Selecione uma opção" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Visualizar Documento", @"Apagar Documento", @"Capturar Imagem", nil];
     
     self.documentos = [self getCategoriaDocumentos];
     
@@ -75,14 +78,26 @@
     
     CategoriaDocumento *documento = [self.documentos objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = documento[@"nome"];
-    cell.detailTextLabel.text = documento[@"descricao"];
+    PFQuery *queryDocSimulacao = [PFQuery queryWithClassName:@"DocumentoSimulacao"];
+    [queryDocSimulacao whereKey:@"categoriaDocumento" equalTo:documento];
+    [queryDocSimulacao whereKey:@"simulacao" equalTo:self.simulacao];
+    
+    NSArray *resultado = [queryDocSimulacao findObjects];
+    DocumentoSimulacao *docSimulacao = [DocumentoSimulacao alloc];
+    
+    if ([resultado count] > 0) {
+        docSimulacao = [resultado objectAtIndex:0];
+    }
+    
+    cell.lblDocumentoNome.text = documento[@"nome"];
+    cell.lblDocumentoDescricao.text = documento[@"descricao"];
+    cell.imageDocumento.image = [UIImage imageNamed:@"placeholder"];
     
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    [self.actionSheetDocumento showInView:self.view];
 }
 
 @end

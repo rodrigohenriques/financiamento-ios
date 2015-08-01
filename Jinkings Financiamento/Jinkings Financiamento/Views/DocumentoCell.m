@@ -11,11 +11,12 @@
 @implementation DocumentoCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    self.imageDocumento.layer.cornerRadius = 5;
+    self.imageDocumento.clipsToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+    [super setSelected:NO animated:animated];
 
     // Configure the view for the selected state
 }

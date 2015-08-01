@@ -10,4 +10,8 @@
 
 @interface DocumentoCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *lblDocumentoNome;
+@property (strong, nonatomic) IBOutlet UILabel *lblDocumentoDescricao;
+@property (strong, nonatomic) IBOutlet UIImageView *imageDocumento;
+
 @end

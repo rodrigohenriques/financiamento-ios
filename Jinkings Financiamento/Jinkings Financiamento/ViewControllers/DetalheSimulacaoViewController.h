@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Simulacao.h"
 
-@interface DetalheSimulacaoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface DetalheSimulacaoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, strong) Simulacao *simulacao;
 
