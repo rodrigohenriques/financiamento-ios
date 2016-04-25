@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Simulacao.h"
+#import "FotoViewController.h"
 
-@interface DetalheSimulacaoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
+@interface DetalheSimulacaoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) Simulacao *simulacao;
 

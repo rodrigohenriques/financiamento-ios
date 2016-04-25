@@ -1,6 +1,5 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/HexColors" "${PODS_ROOT}/Headers/Public/IQKeyboardManager" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/RPFloatingPlaceholders" "${PODS_ROOT}/Headers/Public/TSMessages"
 OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/HexColors" -isystem "${PODS_ROOT}/Headers/Public/IQKeyboardManager" -isystem "${PODS_ROOT}/Headers/Public/MBProgressHUD" -isystem "${PODS_ROOT}/Headers/Public/RPFloatingPlaceholders" -isystem "${PODS_ROOT}/Headers/Public/TSMessages"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-Jinkings Soluciona-AFNetworking" -l"Pods-Jinkings Soluciona-HexColors" -l"Pods-Jinkings Soluciona-IQKeyboardManager" -l"Pods-Jinkings Soluciona-MBProgressHUD" -l"Pods-Jinkings Soluciona-RPFloatingPlaceholders" -l"Pods-Jinkings Soluciona-TSMessages" -framework "CoreGraphics" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration"
-OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+OTHER_LDFLAGS = $(inherited) -ObjC -l"AFNetworking" -l"HexColors" -l"IQKeyboardManager" -l"MBProgressHUD" -l"RPFloatingPlaceholders" -l"TSMessages" -framework "CoreGraphics" -framework "Foundation" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
 PODS_ROOT = ${SRCROOT}/Pods
